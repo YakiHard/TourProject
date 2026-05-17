@@ -1,0 +1,63 @@
+/* ПОЖАЛУЙСТА, ЗАПОЛНИТЕ ВСЕ ПОЛЯ */
+.error_message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    background-color: #ff0000;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    margin-top: 20px;    
+}
+
+/* УВЕДОМЛЕНИЕ */
+.messages_thanks {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: rgb(255, 255, 255);
+    z-index: 9999;
+    background-color: #009175;
+    border-radius: 20px;
+    padding: 15px 50px;
+    font-family: 'Montserrat';
+    font-size: 23px;
+    opacity: 0;
+    animation: thanks 1s forwards;
+}
+
+.messages_thanks.output {
+    opacity: 1;
+    animation: output 1s forwards;
+}
+
+@keyframes thanks {
+    0% {
+        opacity: 1;
+        transform: translateX(-700px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes output {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-700px);
+    }
+}
+
+/* ОШИБКА */
+.error-input {
+    border: 3px solid rgb(255, 0, 0) !important;
+}
+
+ 

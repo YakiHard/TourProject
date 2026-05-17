@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/my_tour.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/font.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/notification.css'%}">
+</head>
+<body>
+    {% if messages %}
+        {% for  message in messages %}
+            <div class="messages_thanks">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <section class="header-section">
+        <nav class="menu-header">
+            <div class="logo-header">
+                <a href="{% url 'index'%}">
+                    <p>Speed & Travel</p>
+                </a>
+            </div>
+            <div class="contact-info">  
+                <p>+7 (900) 222 55 44</p>
+                <a href="/">
+                    <p>About us</p>
+                </a>
+            </div>
+        </nav>
+    </section>
+    <section class="filter">
+        <a href="?sort=direction">
+            <div class="filter-direction">
+                <img src="{% static 'main/images/direction_icon.png'%}" width="30px" height="30px">
+                <p>Сортировка по направлению</p>
+            </div>
+        </a>
+        <div class="filter_date">
+            <img src="{% static 'main/images/date_icon.png'%}" width="35px" height="40px">
+            <form method="get">
+                <input type="date" name="date_from" value=" request.GET.date_from">
+                <input type="date" name="date_to" value=" request.GET.date_to">
+                <button type="submit">Найти</button>
+                <a href="{% url 'my_tour_index'%}">Сбросить</a>
+            </form>
+
+        </div>
+    </section>
+    <section class="our_tour_full">
+        <div class="our_tour">
+            <h2>Все туры:</h2>
+            {% for tour in tours %}
+            <div class="tour">
+                <p>Направление: {{ tour.get_direction_display }}
+                <p>Дата: {{ tour.departure_date }}</p>
+                <p>Продолжительность: {{ tour.duration }}</p> 
+                <p> Цена: {{tour.calculate_cost}}</p>
+            </div>
+            {% empty %}
+                <p>Туров пока нет</p>
+                {% endfor %}
+        </div>
+    </section>
+    <script>
+        setTimeout(() => {
+            const thanks = document.querySelector('.messages_thanks');
+            if (thanks) {
+                thanks.classList.add('output');
+                setTimeout(() => thanks.remove(), 1000);
+            }
+        },3000)
+    </script>
+</body>
+</html>

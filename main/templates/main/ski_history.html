@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/ski_history.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/font.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <section class="header-section">
+        <nav class="menu-header">
+            <div class="logo-header">
+                <a href="{% url 'index'%}">
+                    <p>Speed & Travel</p>
+                </a>
+            </div>
+            <div class="contact-info">  
+                <p>+7 (900) 222 55 44</p>
+                <a href="/">
+                    <p>About us</p>
+                </a>
+            </div>
+        </nav>
+    </section>
+    <section class="video">
+        <video controls loop muted>
+            <source src="{% static 'main/videos/matterhorn.mp4' %}" type="video/mp4">
+        </video>
+    </section>
+    
+</body>
+</html>

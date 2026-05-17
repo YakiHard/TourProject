@@ -1,0 +1,1084 @@
+body {
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    position: fixed;
+    z-index: 2000;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+}
+
+.top .top-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #26ac92;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    color: #F0F0F0;
+    font-weight: bold;
+    cursor: pointer;
+    animation: anim1 4s infinite;
+}
+
+@keyframes anim1 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(01);
+    }
+}
+
+/* МЕНЮ */
+.header-section{
+    position: fixed;
+    background-color: #F5F5F5;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.menu-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 150px;
+}
+
+.menu-header p {
+    color: #000000;
+}
+
+.menu-header a {
+    text-decoration: none;
+}
+
+.logo-header p {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.contact-info{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: 'Liter', sans-serif;
+    font-weight: 400px;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.contact-info .about {
+    background-color: #009175;
+    color: #F0F0F0;
+    border: 2px solid #009175;
+    padding: 5px 20px;
+
+    &:hover {
+        background-color: #2C3E50;
+        border: 2px solid #2C3E50;
+    }
+}
+
+.contact-info p {
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 2px solid #009175;
+    transition: all 0.4s ease;
+    color: #000000;
+
+    &:hover {
+        background-color: #009175;
+        border: 2px solid #009175;
+        cursor: pointer;
+        color: #F0F0F0;
+    }
+}
+
+/* ИНФОРМАЦИЯ */
+.face-container{
+    margin: 140px 150px 0 150px;
+    background-color: #009175;
+    font-family: 'Montserrat';
+    color: #F0F0F0;
+    padding: 100px;
+    border-radius: 50px;
+    animation: appear 1s ease 0.2s forwards;
+    opacity: 0;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.face-info{
+    display: flex;
+    justify-content: center;
+}
+
+.title h1{
+    font-size: 40px;
+    animation: appear1 1s ease 0.4s forwards;
+    font-family: 'Unbounded', Arial, sans-serif;
+    opacity: 0;
+}
+
+@keyframes appear1 {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title p{
+    font-size: 20px;
+    width: 750px;
+    margin-right: 50px;
+    margin-top: 50px;
+    animation: appear1 1s ease 0.4s forwards;
+    opacity: 0;
+}
+
+@keyframes appear1 {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.transfers-text{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 80px;
+    font-size: 20px;
+}
+
+.transfers-text .city,
+.transfers-text .country,
+.transfers-text .tourist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 12px 15px 31px 4px rgba(34, 60, 80, 0.2);
+    background-color:#F0F0F0;
+    animation: appear2 1s ease 0.6s forwards;
+    opacity: 0;
+}
+
+@keyframes appear2 {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.transfers-text .city p:first-child,
+.transfers-text .country p:first-child,
+.transfers-text .tourist p:first-child{
+    font-weight: bold;
+}
+
+.transfers-text .city p,
+.transfers-text .country p,
+.transfers-text .tourist p{
+    margin: 5px;
+    color:#000000;
+}
+
+.face-info img{
+    width: 400px;
+    animation: appear3 1s ease 0.4s forwards;
+    opacity: 0;
+    pointer-events: none
+}
+
+@keyframes appear3 {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ВСЁ УЖЕ ОРГАНИЗОВАНО */
+.info1-tour {
+    margin: 100px 400px 100px 400px;
+    font-family: 'Montserrat';
+}
+
+.info1-tour-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info1-tour-container h1 {
+    font-size: 40px;
+    font-family: 'Unbounded', Arial, sans-serif;
+    max-width: 300px;
+    margin-bottom: 5px;
+}
+
+.info1-tour-container .text {
+    animation: text-right 1s ease 0.6s forwards;
+    opacity: 0;
+}
+
+@keyframes text-right {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info1-tour-container .text-right {
+    display: flex;
+    justify-content: center;
+    margin-right: -300px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    gap: 13px;
+    
+}
+
+.info1-tour-container .text-right span:last-child{
+    animation: heard 1s infinite;
+}
+
+@keyframes heard {
+    0% {
+        transform: scale(1) rotate(15deg);
+    }
+    25% {
+        transform: scale(1.2) rotate(15deg);
+    }
+    50% {
+        transform: scale(1) rotate(15deg);
+    }
+    75% {
+        transform: scale(1) rotate(15deg);
+    }
+    80% {
+        transform: scale(1.2) rotate(15deg);
+    }
+    100% {
+        transform: scale(1) rotate(15deg);
+    }
+}
+
+.info1-tour-container .text p {
+    max-width: 450px;
+    margin: 0;
+}
+
+.info1-tour-container .gif {
+    display: flex;
+    gap: 20px;
+    animation: gif 1s ease 0.6s forwards;
+    opacity: 0;
+}
+
+@keyframes gif {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info1-tour-container .gif .block1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.info1-tour-container .gif .block1 img:first-child {
+    width: 200px;
+}
+
+.info1-tour-container .gif img {
+    border-radius: 30px;
+    pointer-events: none;
+    max-width: 250px;
+}
+
+.info1-tour-container .gif .block2 img {
+    height: 100%;
+}
+
+/* НОВЫЙ ФОРМАТ СЧАСТЬЯ */
+.info2-tour {
+    margin: 180px 400px 100px 400px;
+    font-family: 'Montserrat';
+}
+
+.info2-tour-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.info2-tour-container .text {
+    max-width: 500px;
+    position: sticky;
+    top: 100px;
+}
+
+.info2-tour-container h1 {
+    font-size: 40px;
+    font-family: 'Unbounded', Arial, sans-serif;
+    max-width: 500px;
+    margin-bottom: 5px;
+}
+
+.info2-tour-container .text .text1 {
+    font-weight: 500;
+    margin-top: 25px;
+}
+
+.info2-tour-container .text-block {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info2-tour-container .text-block .block1,
+.info2-tour-container .text-block .block2,
+.info2-tour-container .text-block .block3,
+.info2-tour-container .text-block .block4 {
+    background-color: #ffffff;
+    padding: 10px 20px 30px 20px;
+    border-radius: 30px;
+    color: #000000;
+    box-shadow: 4px 4px 17px -3px rgba(34, 60, 80, 0.2);
+}
+
+.info2-tour-container .text-block .block1 h2,
+.info2-tour-container .text-block .block2 h2,
+.info2-tour-container .text-block .block3 h2,
+.info2-tour-container .text-block .block4 h2 {
+    max-width: 350px;
+}
+
+.info2-tour-container .text-block .block1 p,
+.info2-tour-container .text-block .block2 p,
+.info2-tour-container .text-block .block3 p,
+.info2-tour-container .text-block .block4 p {
+    max-width: 500px;
+}
+
+
+.info2-tour-container .text-block .block1 .img-block1,
+.info2-tour-container .text-block .block2 .img-block2,
+.info2-tour-container .text-block .block3 .img-block3,
+.info2-tour-container .text-block .block4 .img-block4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info2-tour-container .text-block .block1 .img-block1 img,
+.info2-tour-container .text-block .block2 .img-block2 img,
+.info2-tour-container .text-block .block3 .img-block3 img,
+.info2-tour-container .text-block .block4 .img-block4 img {
+    width: 150px;
+}
+
+/* МАРШРУТ */
+.route {
+    background-color: #009175;
+}
+
+.route-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 180px 400px 0 400px;
+    padding: 100px 0;
+    color: #F0F0F0;
+}
+
+.route-container .paris,
+.route-container .thailand,
+.route-container .zermatt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.route-container .text-container h1 {
+    font-family: 'Unbounded', Arial, sans-serif;
+    font-size: 40px;
+    margin: 0;
+}
+
+.route-container .text-container h2 {
+    font-size: 35px;
+    margin: 0 0 30px 0;
+    font-family: 'Unbounded', Arial, sans-serif;
+}
+
+.route-container .text-container p {
+    font-family: 'Montserrat';  
+    max-width: 600px;
+}
+
+.route-container .photo-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 60px;
+}
+
+.route-container .photo-container .photo1 {
+    gap: 60px;
+}
+
+.route-container .photo-container img {
+    width: 200px;
+}
+
+.route-container .photo-container .img1 {
+    transform: rotate(-5deg);
+}
+
+.route-container .photo-container .img2 {
+    transform: rotate(15deg);
+}
+
+.route-container .photo-container .img3 {
+    margin-left: -60px;
+    transform: rotate(5deg)
+}
+
+.route-container .btnDirections {
+    margin-top: 30px;
+    padding: 10px 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #2C3E50;
+    border: 1px solid #2C3E50;
+    font-weight: bold;
+    color: #F0F0F0;
+    cursor: pointer;
+    max-width: 400px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #F0F0F0;
+        color: #2C3E50;
+        border: 1px solid #F0F0F0;
+    }
+}
+
+/* PDF */
+.pdf {
+    position: relative;
+    scroll-margin-top: 100px;
+    overflow: hidden;
+    margin-top: 200px;
+}
+
+.pdf .greenHouse {
+    width: 100%;
+    height: 70vh;
+    filter: blur(5px);
+    pointer-events: none;
+    transform: scale(1.1);
+}
+
+.pdf .pdf-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    position: absolute;
+    padding: 80px 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(169, 171, 171, 0.9);
+    border-radius: 30px;
+}
+
+.pdf-animation {
+    display: flex;
+    align-items: center;
+}
+
+.pdf-container .text h1 {
+    font-family: 'Unbounded', Arial, sans-serif;
+    max-width: 600px;
+    font-size: 45px;
+}
+
+.pdf-container .text p {
+    font-family: 'Montserrat';
+    max-width: 500px;
+}
+
+.pdf-container .text .pdf-animation {
+    display: flex;
+    justify-content: center;
+    margin-right: -100px;
+}
+
+.pdf-container .text .pdf-animation p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    margin: 0;
+}
+
+.pdf-container .text .pdf-animation img {
+    width: 40px;
+    animation: pdf 3s infinite;
+    transform: rotate(-20deg);
+}
+
+@keyframes pdf {
+    50% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+
+.pdf-container .gif img {
+    width: 200px;
+    height: 35vh;
+    border-radius: 20px;
+    border: 4px solid #000000;
+    pointer-events: none;
+}
+
+#id_button{
+    margin-top: 30px;
+    padding: 10px 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #2C3E50;
+    border: 1px solid #2C3E50;
+    font-weight: bold;
+    color: #F0F0F0;
+    cursor: pointer;
+    max-width: 400px;
+    transition: background-color 0.3s ease;
+}
+
+#id_button:hover{
+    background-color: #009175;
+    border: 1px solid #009175;
+    color: #F0F0F0;
+}
+
+/* БРОНИРОВАНИЕ */
+.arrange {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    font-family: 'Montserrat';
+    z-index: 4000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    animation: inputApp 0.5s forwards;
+}
+
+@keyframes inputApp {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.arrange.outputApp {
+    animation: outputApp 0.5s forwards;
+}
+
+@keyframes outputApp {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.arrange-container{
+    border: 4px solid #ffffff;
+    border-radius: 40px;
+    background-color: #ffffff;
+    padding: 10px 40px 40px 40px;
+    color: #2C3E50;
+    font-size: 18px;
+}
+
+.arrange-container .header-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrange-container .header-text .text {
+    max-width: 500px;
+}
+
+.close {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* КОНТАКТНЫЕ ДАННЫЕ */
+.booking-form{
+    margin-top: -10px;
+}
+
+.fio{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fio input{
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px 10px;
+    background-color: rgb(241, 247, 254);
+    border: 1px solid rgb(241, 247, 254);
+    font-size: 15px;
+    font-family: 'Montserrat';
+    margin-top: 15px;
+    box-sizing: border-box;
+}
+
+.fio input::placeholder {
+    color: black;
+}
+
+.contacts{
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.contacts input{
+    border-radius: 10px;
+    width: 100%;
+    padding: 15px 10px;
+    background-color: rgb(241, 247, 254);
+    border: 1px solid rgb(241, 247, 254);
+    font-size: 15px;
+    font-family: 'Montserrat';
+    margin-top: 15px;
+}
+
+.contacts input::placeholder {
+    color: black;
+}
+
+.personal_data{
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.btnSubmit{
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #2C3E50;
+    border: 1px solid #2C3E50;
+    font-family: 'Montserrat';
+    color: #F0F0F0;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btnSubmit:hover{
+    background-color: #009175;
+    border: 1px solid #009175;
+    color: #F0F0F0;
+}
+
+/* ОТЗЫВЫ */
+.reviews {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 400px;
+    background-color: #2C3E50;
+    color: white;
+    font-family: 'Montserrat';
+    margin-top: 200px;
+    scroll-margin-top: 100px;
+}
+
+.reviews h1{
+    width: 500px;
+    font-size: 50px;
+    font-family: 'Unbounded', Arial, sans-serif;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    line-height: 22px;
+    padding-bottom: 40px;
+}
+
+.reviews-container .column1,
+.reviews-container .column2,
+.reviews-container .column3,
+.reviews-container .column4 {
+    display: flex;
+    gap: 20px;
+}
+
+.reviews-container .column1 .reviews1,
+.reviews-container .column2 .reviews1,
+.reviews-container .column3 .reviews1,
+.reviews-container .column4 .reviews1 {
+    user-select: none;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: 4px 13px 62px -25px rgba(218, 218, 218, 0.564);
+    }
+}
+
+.reviews1 {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.reviews1 .header {
+    display: flex;
+    gap: 15px;
+}
+
+.reviews1 .header .text h4 {
+    color:#000000;
+    font-weight: bold;
+    margin: 0;
+}
+
+.reviews1 .header .text p {
+    margin: 0;
+    color:#929292;
+    font-weight: 500;
+}
+
+.reviews p {
+    max-width: 400px;
+    color: black;
+}
+
+.btn-reviews {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-reviews #btnReviews {
+    margin-top: 70px;
+    padding: 10px 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #009175;
+    border: 1px solid #009175;
+    font-weight: bold;
+    color: #F0F0F0;
+    cursor: pointer;
+    max-width: 400px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #F0F0F0;
+        color: #2C3E50;
+        border: 1px solid #2C3E50;
+    }
+}
+
+/* ВЫБОР ТУРА */
+.tour {
+    margin: 100px 400px 0 400px;
+    scroll-margin-top: 100px;
+}
+
+.moscow-text {
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
+
+.moscow-text p {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.moscow-text p:last-child {
+    color: rgb(255, 83, 9);
+}
+
+.choices-tour h1 {
+    font-family: 'Montserrat';  
+}
+
+/* КАРТОЧКИ С ТУРАМИ */
+.tour-cards {
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+    margin-top: 40px;
+    flex-wrap: wrap; 
+    max-width: 1400px; 
+}
+
+.tour-cards a {
+    text-decoration: none;
+}
+
+.excursion-tour-cards,
+.beach-tour-cards,
+.ski-tour-cards {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 15px 40px 15px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-family: 'Montserrat';
+    width: 300px;
+    position: relative;
+}
+
+.excursion-tour-cards img,
+.beach-tour-cards img,
+.ski-tour-cards img {
+    filter: blur(2px);
+    pointer-events: none
+}
+
+.excursion-tour-cards .excursion-text,
+.beach-tour-cards .beach-text,
+.ski-tour-cards .ski-text {
+    color: #000000;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    width: 120px;
+}
+
+.description_ski {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.description_excursion p,
+.description_beach p,
+.description_ski p{
+    color: #2C3E50;
+}
+
+.description_excursion h3,
+.description_beach h3,
+.description_ski h3{
+    margin: 0;
+    color: #2C3E50;
+}
+
+.description_excursion .description,
+.description_beach .description,
+.description_ski .description{
+    padding: 3px 100px;
+    background-color: #009175;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+
+.description_excursion .description p,
+.description_beach .description p,
+.description_ski .description p{ 
+    font-size: 14px;
+    color: #F5F5F5;
+    font-weight: bold;
+}
+
+/* БИОГРАФИЯ */
+.biografy{
+    background-color: #009175;
+    color: #F0F0F0;
+    font-family: 'Montserrat';
+    margin-top: 180px;
+    scroll-margin-top: 100px;
+}
+
+.biografy-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 100px 100px;
+    animation: biografy 1s forwards;
+}
+
+@keyframes biografy {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.biografy-text .h1-text{
+    margin: 60px 0;
+    font-size: 17px;
+    font-size: 35px;
+    font-weight: bold ;
+}
+
+.biografy-text .h1-text span:last-child{
+    font-family: 'Akrobat', Arial, sans-serif;
+    font-style: italic;
+    font-weight: 100;
+}
+
+.biografy-text p{
+    font-size: 25px;
+    max-width: 900px;
+}
+
+.biografy-text .quote{
+    margin-top: 60px;
+    font-family: 'Akrobat', Arial, sans-serif;
+    font-style: italic;
+    max-width: 900px;
+}
+
+.my-photo img{
+    width: 550px;
+    animation: biografyimg 1.3s forwards;
+}
+
+@keyframes biografyimg {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ПОДВАЛ */
+.footer-full{
+    display: flex;
+    background-color: #2C3E50;
+    margin-top: 200px;
+    color:#F0F0F0;
+    font-family: 'Montserrat';
+    min-height: 50vh;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 50px;
+    margin: 80px 400px;
+}
+
+.footer-right p{
+    width: 400px;
+    margin-top: 80px;
+}
+
+.footer-center p{
+    margin-top: 55px;
+}
+
+.footer-left{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 320px;
+}
+
+.footer-left img{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.footer-left .tg{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+

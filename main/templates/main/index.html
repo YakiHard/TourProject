@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed & Travel</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/font.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/notification.css'%}">
+</head>
+<body>
+    <div class="top">
+        <div class="top-container" id="id_top">
+            <span>&uarr;</span>
+        </div>
+    </div>
+    <section class="header-section">
+        <nav class="menu-header">
+            <div class="logo-header">
+                <a href="{% url 'index'%}">
+                    <p>Speed & Travel</p>
+                </a>
+            </div>
+            <div class="contact-info">
+                <a href="{% url 'my_tour_index'%}">
+                    <p>Ваши туры</p>
+                </a>
+                <p id="id_reviews">Отзывы</p>
+                <p class="about" id="id_aboutUs">О нас</p>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">
+                        <p>Выйти</p>
+                    </a>
+                {% else %}
+                    <a href="{% url 'register' %}">
+                        <p>Регистрация</p>
+                    </a>
+                {% endif  %}
+            </div>
+        </nav>
+    </section>
+    <section class="face">
+        <div class="face-container">
+            <div class="face-info">
+                <div class="face-text">
+                    <div class="title">
+                        <h1>Путешествуйте с нами!</h1>
+                        <p>Мы сотрудничаем с более чем 50 городами в 15 странах мира. 
+                            Гарантируем качественный отдых, безопасность и незабываемые впечатления. 
+                            Индивидуальный подход к каждому клиенту, лучшие отели и экскурсионные программы. 
+                        </p>
+                    </div>
+                    <div class="transfers-text">
+                        <div class="city">
+                            <p>50+</p>
+                            <p>Городов</p>
+                        </div>
+                        <div class="country">
+                            <p>15+</p>
+                            <p>Стран</p>
+                        </div>
+                        <div class="tourist">
+                            <p>1000+</p>
+                            <p>Туристов</p>
+                        </div>
+                    </div> 
+                </div>
+                <img src="{% static 'main/images/suitcase.png' %}">
+            </div>
+        </div> 
+    </section>
+    <section class="info1-tour">
+        <div class="info1-tour-container">
+            <div class="text">
+                <h1>Всё уже организовано!</h1>
+                <div class="text-right">
+                    <span>с заботой о вас</span>
+                    <span>♡</span>
+                </div>
+                <p>Вам остается только коллекционировать лучшие эмоции, 
+                    опыт и незабываемые впечатления от первозданных 
+                    красот!
+                </p>
+            </div>
+            <div class="gif">
+                <div class="block1">
+                    <img src="{% static 'main/gif/mountains.gif' %}">
+                    <img src="{% static 'main/gif/paris.gif' %}">
+                </div>
+                <div class="block2">
+                    <img src="{% static 'main/gif/italy.gif' %}">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="info2-tour">
+        <div class="info2-tour-container">
+            <div class="text">
+                <h1>НОВЫЙ ФОРМАТ СЧАСТЬЯ</h1>
+                <p class="text1">Путешествия — это маленькая жизнь</p>
+                <p class="text2">Что бы вы ни искали — отдых наедине с собой, 
+                    яркие приключения в новой компании или ценное время с 
+                    родными — важно только одно: мы создадим вместе впечатления, 
+                    которые будут согревать вас даже спустя многие годы.
+                </p>
+            </div>
+            <div class="text-block">
+                <div class="block1">
+                    <h2>Для пар, которые ценят каждые моменты вместе</h2>
+                    <p>Романтика не измеряется расстояниями, 
+                        но создается в каждом взгляде и моменте. 
+                        Ваша задача — просто быть рядом друг с другом. 
+                        Ну, а мы создадим для вас идеальное путешествие, 
+                        которое наполнит ваши отношения новыми красками!
+                    </p>
+                    <div class="img-block1">
+                        <img src="{% static 'main/images/people1.jpg' %}">
+                        <img src="{% static 'main/images/people2.jpg' %}">
+                        <img src="{% static 'main/images/people3.jpg' %}">
+                    </div>
+                </div>
+                <div class="block2">
+                    <h2>Для тех, кто ищет себя и близких по духу</h2>
+                    <p>Путешествия — это не только новые места, 
+                        но и новая версия вас самих. Это шанс на перезагрузку, 
+                        на честный разговор с собой, на поиск вдохновения и 
+                        неожиданные знакомства. Иногда достаточно лишь сменить 
+                        декорации, чтобы найти новые смыслы, страсть и верных 
+                        единомышленников.
+                    </p>
+                    <div class="img-block2">
+                        <img src="{% static 'main/images/people4.jpg' %}">
+                        <img src="{% static 'main/images/people5.jpg' %}">
+                        <img src="{% static 'main/images/people6.jpg' %}">
+                    </div>
+                </div>
+                <div class="block3">
+                    <h2>Для родителей, которые хотят показать детям новый мир</h2>
+                    <p>Вместо экранов планшетов — живые истории своими глазами. 
+                        Путешествия с детьми — это возможность создать семейные 
+                        легенды и память, которые передаются из поколения в 
+                        поколение. А самое главное — здесь у вас наконец-то 
+                        будет время друг для друга. Это ли не самое ценное, 
+                        что есть в жизни?
+                    </p>
+                    <div class="img-block3">
+                        <img src="{% static 'main/images/people7.jpg' %}">
+                        <img src="{% static 'main/images/people8.jpg' %}">
+                        <img src="{% static 'main/images/people9.jpg' %}">
+                    </div>
+                </div>
+                <div class="block4">
+                    <h2>Для друзей, которые создают совместные истории</h2>
+                    <p>Настоящая дружба проверяется не только временем, 
+                        но и общим чемоданом. Тем самым, в котором никогда 
+                        нет нужной вещи, но всегда есть повод для истории. 
+                        А годы спустя — это уже вечное «а помнишь?..» за 
+                        чашкой кофе. С друзьями весь мир — ваша Центральная 
+                        кофейня! ;)
+                    </p>
+                    <div class="img-block4">
+                        <img src="{% static 'main/images/people10.jpg' %}">
+                        <img src="{% static 'main/images/people11.jpg' %}">
+                        <img src="{% static 'main/images/people12.jpg' %}">
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </section>
+    <section class="route">
+        <div class="route-container">
+            <div class="paris">
+                <div class="text-container">
+                    <h1>ЭКСКУРСИОННЫЙ ТУР</h1><br>
+                    <h2>Париж</h2>
+                    <p>Утром* мы встретим вас в аэропорту Шарль-де-Голль.</p>
+                    <p>Заселяемся в отель, а после отправимся на первую прогулку по городу.
+                        Вы увидите знаменитую Эйфелеву башню — символ Парижа, построенную к
+                        Всемирной выставке 1889 года. Сможете сделать первые фотографии на
+                        Марсовом поле и подняться на смотровую площадку, откуда открывается
+                        потрясающий вид на весь город.
+                    </p>
+                    <p>Затем отправимся в исторический центр — остров Сите.
+                        Вы посетите собор Парижской Богоматери (Нотр-Дам-де-Пари),
+                        жемчужину французской готической архитектуры. Увидите легендарных
+                        химер и горгулий, а также сможете пройти к сокровищнице собора.
+                    </p>
+                    <p>Продолжим прогулку по Латинскому кварталу — самому старому району Парижа.
+                        Вы прогуляетесь по узким улочкам, где жили и творили Эрнест Хемингуэй,
+                        Пабло Пикассо и Джеймс Джойс. Зайдём в Сорбонну — один из старейших
+                        университетов Европы.
+                    </p>
+                    <p>Посетим Люксембургский сад — любимое место отдыха парижан.
+                        Вы увидите великолепный дворец, фонтан Медичи и ухоженные аллеи,
+                        где приятно просто гулять и наслаждаться атмосферой.
+                    </p>
+                    <p>Закончим вечер ужином в традиционном французском бистро,
+                        где попробуем знаменитый луковый суп, улитки по-бургундски и,
+                        конечно, круассаны. Познакомимся поближе с группой и обсудим планы на
+                        ближайшие дни.
+                    </p>
+                    <p>* Рекомендованное время прилёта — до 10:30.</p>
+                </div>
+                <div class="photo-container">
+                    <div class="photo1">
+                        <img class="img1" src="{% static 'main/images/Paris1.jpg' %}">
+                        <img class="img2" src="{% static 'main/images/Paris2.jpg' %}">
+                    </div>
+                    <img class="img3" src="{% static 'main/images/Paris3.png' %}">
+                </div>
+            </div>
+            <div class="thailand">
+                <div class="text-container">
+                    <h1>ПЛЯЖНЫЙ ТУР</h1><br>
+                    <h2>Пхукет</h2>
+                    <p>Утром* мы встретим вас в аэропорту Пхукета.</p>
+                    <p>Заселяемся в отель прямо у побережья Андаманского моря, а после отправимся 
+                        на первый пляж — легендарный Патонг. Вы пройдёте по белоснежному песку, 
+                        искупаетесь в бирюзовой воде и почувствуете атмосферу самого известного 
+                        курорта острова. Сможете рассмотреть местные длиннохвостые лодки 
+                        (лонгтейлы) на фоне заката.
+                    </p>
+                    <p>Затем отправимся на смотровую площадку Карон — одну из самых живописных 
+                        на острове. Вы увидите панораму трёх заливов, сделаете эффектные 
+                        фотографии и полюбуетесь, как океан меняет цвет от нежно-бирюзового 
+                        до насыщенно-синего.
+                    </p>
+                    <p>Посетим храм Большого Будды — самую почитаемую святыню Пхукета. 
+                        Вы увидите 45-метровую статую, сделанную из белого мрамора, и сможете 
+                        загадать желание. С высоты храма откроется вид на весь остров и 
+                        океан — идеальное место для медитации и спокойного отдыха.
+                    </p>
+                    <p>Затем отправимся в Старый город Пхукета. Вы прогуляетесь по улицам с 
+                        португальской архитектурой, увидите красочные особняки 19 века и китайские святилища. 
+                        Зайдём на местный рынок, где можно попробовать экзотические фрукты — дуриан, мангостин, 
+                        рамбутан и самую сладкую в мире папайю.
+                    </p>
+                    <p>Закончим вечер ужином на пляже с видом на океан, где попробуем 
+                        традиционный тайский ужин (Том Ям, Пад Тай и свежие морепродукты). 
+                        Познакомимся поближе с группой и узнаем, с кем проведём ближайшую 
+                        неделю в раю.
+                    </p>
+                    <p>* Рекомендованное время прилёта — до 12:00.</p>
+                </div>
+                <div class="photo-container">
+                    <div class="photo1">
+                        <img class="img1" src="{% static 'main/images/Thailand1.jpg' %}">
+                        <img class="img2" src="{% static 'main/images/Thailand2.jpg' %}">
+                    </div>
+                    <img class="img3" src="{% static 'main/images/Thailand3.jpg' %}">
+                </div>
+            </div>
+            <div class="zermatt">
+                <div class="text-container">
+                    <h1>ГОРНОЛЫЖНЫЙ ТУР</h1><br>
+                    <h2>Церматт</h2>
+                    <p>Утром* мы встретим вас в аэропорту Цюриха или Женевы (по вашему выбору).</p>
+                    <p>Заселяемся в отель прямо у подножия легендарного Маттерхорна, 
+                        а после отправимся на первую прогулку по Церматту — самому известному 
+                        горнолыжному курорту Швейцарии. Вы увидите знаменитую пирамидальную 
+                        вершину (4 478 м), которую называют «королевой Альп». 
+                        Сможете сделать первые фотографии на фоне заснеженных гор и 
+                        подышать чистым, хрустальным воздухом.
+                    </p>
+                    <p>Затем поднимемся на поезде Горнерграт — одну из самых высокогорных 
+                        железных дорог Европы. Вы проедете через туннели, вырубленные 
+                        в скалах, и окажетесь на смотровой площадке на высоте 3 089 метров. 
+                        Оттуда открывается панорама на 29 четырёхтысячников, 
+                        включая Маттерхорн и ледник Горнер. Вы сможете рассмотреть 
+                        застывшие реки льда и услышать, как они «дышат» — 
+                        потрескивают и шевелятся.
+                    </p>
+                    <p>Затем отправимся кататься по трассам. В Церматте более 360 километров 
+                        подготовленных склонов — от простых «голубых» до экстремальных «чёрных».
+                        Вы познакомитесь с местными маршрутами, попробуете свои силы на леднике 
+                        Теодул (круглогодичное катание) и ощутите, как ветер свистит в ушах 
+                        на скорости.
+                    </p>
+                    <p>Посетим деревню Тэш — маленький уютный посёлок, откуда в Церматт можно 
+                        добраться только на электропоезде (машинам въезд запрещён, чтобы не 
+                        портить воздух). Прогуляемся по пешеходным улочкам, зайдём в 
+                        традиционный швейцарский ресторанчик.
+                    </p>
+                    <p>Закончим вечер ужином с местной кухней — сырное фондю, раклетт и, 
+                        конечно, горячий шоколад. Познакомимся поближе с группой и узнаем, 
+                        с кем проведём ближайшую неделю на склонах Альп.
+                    </p>
+                    <p>* Рекомендованное время прилёта — до 12:00. Трансфер до Церматта 
+                        занимает около 3 часов от аэропорта Цюриха и 2,5 часа от Женевы.
+                    </p>
+                </div>
+                <div class="photo-container">
+                    <div class="photo1">
+                        <img class="img1" src="{% static 'main/images/Zermatt1.jpg' %}">
+                        <img class="img2" src="{% static 'main/images/Zermatt2.jpg' %}">
+                    </div>
+                    <img class="img3" src="{% static 'main/images/Zermatt3.jpg' %}">
+                </div>
+            </div>
+            <button class="btnDirections" id="id_directions">Ещё направления</button>
+        </div>
+    </section>
+    <section class="pdf">
+        <img class="greenHouse" src="{% static 'main/images/green_house.png' %}">
+        <div class="pdf-container">
+            <div class="text">
+                <h1>Получите полную презентацию</h1>
+                <p>30 страниц в формате PDF (подробно о питании, проживании, чек-листе перед поездкой и т. д)</p>
+                <div class="pdf-animation">
+                    <img src="{% static 'main/images/pdf.png' %}">
+                    <p>+ подробная консультация</p>
+                </div>
+                <button id="id_button">Узнай ещё больше деталей</button>
+            </div>
+            <div class="gif">
+                <img src="{% static 'main/gif/pdf.gif'%}">
+            </div>
+        </div>
+    </section>
+    <!-- БРОНИРОВАНИЕ -->
+    <div class="arrange" id="id_arrange">
+        <form method="post">
+            {% csrf_token %}
+            <div class="arrange-container">
+                <div class="header-text">
+                    <div class="text">
+                        <h1>У нас всё готово – не хватает только вас! :)</h1>
+                        <p>
+                            Воспользуйтесь бесплатной консультацией по путешествию и получите развернутые PDF-материалы.
+                        </p>
+                    </div>
+                    <span class="close" id="id_close">&times;</span>
+                </div>
+                <div class="booking-form">
+                    <div class="fio">
+                        <input type="text" name="name" placeholder="Имя" class="{% if name_error %}error-input{% endif %}">
+                        <input type="text" name="surname" placeholder="Фамилия" class="{% if surname_error %}error-input{% endif %}">
+                        <input type="text" name="patronymic" placeholder="Отчество">
+                    </div>
+                    <div class="contacts">
+                        <input type="tel" name="number" placeholder="Телефон" class="{% if number_error %}error-input{% endif %}">
+                        <input type="email" name="email" placeholder="Email" class="{% if email_error %}error-input{% endif %}">
+                    </div>
+                    <div class="personal_data">
+                        <input type="checkbox" name="personal_data" id="id_personal_data">
+                        <label for="id_personal_data">Я согласен на обработку персональных данных</label>
+                    </div>
+                </div>
+                {% if error_message %}
+                    <div class="error_message">
+                        {{error_message}}
+                    </div>
+                {% endif %}
+                <button class="btnSubmit" type="submit">Хочу узнать больше о программе</button>
+            </div>
+        </form>    
+    </div>
+    <section class="reviews">
+        <h1>Отзывы наших путешественников</h1>
+        <div class="reviews-container">
+            <div class="column1">
+                <div class="reviews1">
+                    <div class="header">
+                        <div class="profile_picture">
+                            <img class="profile" src="{% static 'main/images/profile_picture1.png' %}">
+                        </div>
+                        <div class="text">
+                            <img src="{% static 'main/images/star.png' %}">
+                            <h4>Илона Ф.</h4>
+                            <p>21 апр. 2026 г.</p>
+                        </div>
+                    </div>
+                    <p>Даниил, спасибо Вам большое за организацию нашего путешествия!
+                        Мы увиделли Таиланд - место, где многие только мечтают побывать!
+                        Будем потом вспоминать. Хоть и погода подкачала, но думаю,
+                        у каждого в душе остался свой кусочек этого удивительного края 💙
+                    </p>
+                </div>
+                <div class="reviews1">
+                    <div class="header">
+                        <div class="profile_picture">
+                            <img class="profile" src="{% static 'main/images/profile_picture2.png' %}">
+                        </div>
+                        <div class="text">
+                            <img src="{% static 'main/images/star.png' %}">
+                            <h4>Мария С.</h4>
+                            <p>9 апр. 2026 г.</p>
+                        </div>
+                    </div>
+                    <p>Вот и мы тоже покидаем этот край, подаривший нам новых друзей и
+                        новые впечатления. Всем огромное спасибо и до новых встреч 🙏🙏
+                    </p>
+                </div>
+                <div class="reviews1">
+                    <div class="header">
+                        <div class="profile_picture">
+                            <img class="profile" src="{% static 'main/images/profile_picture3.png' %}">
+                        </div>
+                        <div class="text">
+                            <img src="{% static 'main/images/star.png' %}">
+                            <h4>Лилия Пиденко</h4>
+                            <p>6 апр. 2026 г.</p>
+                        </div>
+                    </div>
+                    <p>Привет. Мы пообещали поскидывать несколько фотографий и видосиков с тура
+                        (прошу прощения, что с опозданием, отдыхали после перелетов 🤗),
+                        а обещание своё держим. До сих пор от поездки самые крутые воспоминания,
+                        Спасибо большое за все красивости и вкусности ❤️🤍❤️🤍
+                        Пхукет - любовь.
+                    </p>
+                </div>
+            </div>
+            <div class="column2">
+                <div class="reviews1">
+                    <div class="header">
+                        <div class="profile_picture">
+                            <img class="profile" src="{% static 'main/images/profile_picture4.png' %}">
+                        </div>
+                        <div class="text">
+                            <img src="{% static 'main/images/star.png' %}">
+                            <h4>Валерия В.</h4>
+                            <p>2 апр. 2026 г.</p>
+                        </div>
+                    </div>
+                    <p>Ездила на Бали. Говорят, там чистейшая вода — это правда. 
+                        Я даже своё отражение увидела. И оно было очень уставшим. 
+                        Спасибо за тур, наконец-то поняла, что мне пора в отпуск! 💋💋😻😻😻
+                    </p>
+                </div>
+                <div class="reviews1">
+                    <div class="header">
+                        <div class="profile_picture">
+                            <img class="profile" src="{% static 'main/images/profile_picture5.png' %}">
+                        </div>
+                        <div class="text">
+                            <img src="{% static 'main/images/star.png' %}">
+                            <h4>Алексей Н.</h4>
+                            <p>15 мар. 2026 г.</p>
+                        </div>
+                    </div>
+                    <p>Вообще, если честно, я ехал за релаксом, а получил приключение на свою задницу. 
+                        Сначала гид сказал: «Осторожно, обезьяны!» — но не уточнил, что они здесь 
+                        главные мафиози. Одна особо наглая личность выхватила у меня из рук паспорт 
+                        и потребовала выкуп в виде банана. Я стоял, торговался с приматом и чувствовал 
+                        себя героем боевика 😂😂😂
+                    </p>
+                </div>
+                <div class="reviews1">
+                    <div class="header">
+                        <div class="profile_picture">
+                            <img class="profile" src="{% static 'main/images/profile_picture6.png' %}">
+                        </div>
+                        <div class="text">
+                            <img src="{% static 'main/images/star.png' %}">
+                            <h4>Аббас А.</h4>
+                            <p>27 фев. 2026 г.</p>
+                        </div>
+                    </div>
+                    <p>Ездил с девушкой на Маттерхорн. Думал, будут объятия и романтика. 
+                        Вместо этого её шапку унесло ветром, она обвинила меня, а я 
+                        три часа доказывал, что ветер — это не я. На смотровой поссорились из-за того, 
+                        кто первый встанет на фото. Помирились только внизу за глинтвейном. Горы крутые, 
+                        но отношения теперь крепче. Speed & Travel, спасибо за приключения!
+                    </p>
+                </div>
+            </div>
+            <div class="column3" id="id_column3">
+                <div class="reviews1">
+                    <div class="header">
+                        <div class="profile_picture">
+                            <img class="profile" src="{% static 'main/images/profile_picture7.png' %}">
+                        </div>
+                        <div class="text">
+                            <img src="{% static 'main/images/star.png' %}">
+                            <h4>Иван В.</h4>
+                            <p>19 фев. 2026 г.</p>
+                        </div>
+                    </div>
+                    <p>Полетели в Италию с семьёй, хотели увидеть знаменитый Каруизо и подышать горным воздухом. 
+                        Природа там действительно потрясающая: чистый снег, тишина 😻
+                        Отдельное спасибо за комфортный трансфер и уютный отель с видом на горы. 
+                        Очень понравилась организация, всё продумано до мелочей. 
+                        Обязательно приедем ещё, теперь уже покататься на лыжах 💪🏻❤️
+                    </p>
+                </div>
+                <div class="reviews1">
+                    <div class="header">
+                        <div class="profile_picture">
+                            <img class="profile" src="{% static 'main/images/profile_picture8.png' %}">
+                        </div>
+                        <div class="text">
+                            <img src="{% static 'main/images/star.png' %}">
+                            <h4>Флаттершай П.</h4>
+                            <p>17 фев. 2026 г.</p>
+                        </div>
+                    </div>
+                    <p>Париж превзошёл все ожидания. Увидели Эйфелеву башню, Лувр, Нотр-Дам и Монмартр — 
+                        всё в своём темпе, без гонки. Гид рассказывал очень интересно, даже дети 
+                        слушали с удовольствием. Понравилось, что было много свободного времени: 
+                        просто гуляли по городу, ели круассаны, пили кофе в уличных кафе. 
+                        Отдельное спасибо за билеты без очередей и удобный отель в центре. 
+                        Speed & Travel, спасибо за сказку! Обязательно приедем ещё 😊
+                    </p>
+                </div>
+                <div class="reviews1">
+                    <div class="header">
+                        <div class="profile_picture">
+                            <img class="profile" src="{% static 'main/images/profile_picture9.png' %}">
+                        </div>
+                        <div class="text">
+                            <img src="{% static 'main/images/star.png' %}">
+                            <h4>Аноним74638293</h4>
+                            <p>2 фев. 2026 г.</p>
+                        </div>
+                    </div>
+                    <p>Пхукет подарил нам настоящий тропический рай. 
+                        Ласковое море, белый песок, вкуснейшие фрукты и улыбчивые местные жители. 
+                        Брали экскурсию на острова Пхи-Пхи — это одно из лучших путешествий в жизни. 
+                        Вода бирюзовая, рыбки, кораллы — как в документальном фильме про океан. 
+                        Отель выбрали с собственным пляжем, очень комфортно. 
+                        Спасибо за этот отдых, вернулись домой полностью перезагруженными и счастливыми.
+                    </p>
+                </div>
+            </div>
+            <div class="column4" id="id_column4">
+                <div class="reviews1">
+                    <div class="header">
+                        <div class="profile_picture">
+                            <img class="profile" src="{% static 'main/images/profile_picture10.png' %}">
+                        </div>
+                        <div class="text">
+                            <img src="{% static 'main/images/star.png' %}">
+                            <h4>Габибуллаева И.</h4>
+                            <p>24 янв. 2026 г.</p>
+                        </div>
+                    </div>
+                    <p>Это было прекрасное путешествие с отличной организацией. 
+                        Я много где была, в том числе и в групповых турах. 
+                        Поэтому есть с чем сравнить. Очень понравилось внимание к мелочам и 
+                        четкий тайминг. Мы ни разу не ждали трансфер дольше пары минут. 
+                        В рестораны гид всегда звонил заранее и горячая еда была готова к 
+                        нашему приезду. Спасибо за наши прекрасные впечатления!
+                        Обязательно поедем с Speed & Travel ещё!
+                    </p>
+                </div>
+                <div class="reviews1">
+                    <div class="header">
+                        <div class="profile_picture">
+                            <img class="profile" src="{% static 'main/images/profile_picture11.png' %}">
+                        </div>
+                        <div class="text">
+                            <img src="{% static 'main/images/star.png' %}">
+                            <h4>Дмитрий К.</h4>
+                            <p>16 янв. 2026 г.</p>
+                        </div>
+                    </div>
+                    <p>Ездили в Гриндельвальд — лучший горнолыжный тур в нашей жизни. 
+                        Трассы отличные, виды безумные, поднялись на Юнгфрауйох — дух 
+                        захватывает. Отель у подъёмника, завтраки вкусные, персонал 
+                        приветливый. Всё организовано чётко, без накладок. 
+                        Speed & Travel, спасибо! Обязательно вернёмся. ❄️🏔️
+                    </p>
+                </div>
+                <div class="reviews1">
+                    <div class="header">
+                        <div class="profile_picture">
+                            <img class="profile" src="{% static 'main/images/profile_picture12.png' %}">
+                        </div>
+                        <div class="text">
+                            <img src="{% static 'main/images/star2.png' %}">
+                            <h4>анастасия н. </h4>
+                            <p>7 янв. 2026 г.</p>
+                        </div>
+                    </div>
+                    <p>Ездили в Париж — всё супер! Эйфелева башня, Лувр, Монмартр. 
+                        Гид отличный, отель в центре, свободное время было. 
+                        Спасибо Speed & Travel! 🇫🇷❤️
+                    </p>
+                </div>
+            </div>    
+            <div class="btn-reviews">
+                <button id="btnReviews">Еще отзывы</button>
+            </div>
+        </div>
+    </section>
+    <section class="tour">
+        <div class="choices-tour">
+            <div class="moscow-text">
+                <img src="{% static 'main/images/fly.png' %}" width="50px" height="40px">
+                <p>Летим</p>
+                <p>из Москвы</p>
+            </div>
+            <h1>Выберите тип тура</h1>
+            <div class="tour-cards">
+                <a href="{% url 'create_excursion_index' %}">
+                    <div class="excursion-tour-cards">
+                        <img src="{% static 'main/images/excursion.png'%}" width="300px" height="200px">
+                        <h2 class="excursion-text">Экскурсионный от 21 100 ₽</h2>
+                        <div class="description_excursion">
+                            <p>От 1 до 20 дней</p>
+                            <h3>Не просто увидеть — почувствовать историю</h3>
+                            <div class="description">
+                                <p>Выбрать тур</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{% url 'create_beach_index' %}">
+                    <div class="beach-tour-cards">
+                        <img src="{% static 'main/images/beach.png'%}" width="300px" height="200px">
+                        <h2 class="beach-text">Пляжный от 30 250 ₽</h2>
+                        <div class="description_beach">
+                            <p>От 1 до 20 дней</p>
+                            <h3>Там, где песок помнит твои следы</h3>
+                            <div class="description">
+                                <p>Выбрать тур</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{% url 'create_ski_index' %}">
+                    <div class="ski-tour-cards">
+                        <img src="{% static 'main/images/ski.png'%}" width="300px" height="200px">
+                        <h2 class="ski-text">Горнолыжный от 28 110 ₽</h2>
+                        <div class="description_ski">
+                            <p>От 1 до 20 дней</p>
+                            <h3>Откройте свою гору — и она откроет вас</h3>
+                            <div class="description">
+                                <p>Выбрать тур</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="biografy" id="biografy">
+        <div class="biografy-container">
+            <div class="biografy-text">
+                <h3>МИССИЯ SPEED & TRAVEL</h3>
+                <div class="h1-text">
+                    <div class="h1-text1">
+                        <span>Доставлять драйв</span>
+                        <span>и свободу с горными приключениями!</span>
+                    </div>
+                </div>
+                <p>Рад, что вы здесь. Меня зовут Даниил.</p>
+                <p>Я — основатель компании Speed & Travel.</p>
+                <div class="quote">
+                    <p>«Путешествия — это единственная вещь, которую покупаешь, 
+                        но становишься богаче» — неизвестный автор.
+                    </p>
+                </div>
+                <p>Что я и делаю. В 2026 году, вдохновившись желанием создавать идеальные путешествия, 
+                    родился проект Speed & Travel. Миссия компании — дарить клиентам яркие эмоции, 
+                    комфорт и уверенность в каждом туре.
+                    Основное направление — авторские поездки в лучшие уголки мира, 
+                    которые покажут, что путешествия — это не про сложности, 
+                    а про новые открытия, свободу выбора и настоящую жизнь.
+                    Мы познакомим вас с атмосферой удивительных мест, 
+                    профессиональным сервисом, комфортным размещением и эмоциями, 
+                    которые останутся с вами навсегда — будь то восхождение в горы, 
+                    расслабление на пляже или знакомство с культурой древних городов.
+                </p>
+            </div>
+            <div class="my-photo">
+                <img class="photo1" src="{% static 'main/images/im1.jpg'%}">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-full">
+            <div class="footer">
+                <div class="footer-right">
+                    <h1>Speed & Travel</h1>
+                    <p>Данная услуга не является туроператорской деятельностью.
+                        Под туром или путешествием подразумевается разовая помощь в организации поездки
+                        от имени заказчика согласно договору поручения. ИП Як. Даниил Алексеевич,
+                        ИНН 784652097543, ОГРНИП 548967663216590.
+                    </p>
+                    <p>© Все права защищены</p>
+                </div>
+                <div class="footer-center">
+                    <h3>+7 991 645 86 55</h3>
+                    <h3>info@speedtravel.ru</h3>
+                    <p>Политика персональных данных<br>
+                        Политика возврата денежных средств<br>
+                        Согласие на получение рекламной информации<br>
+                        Согласие на обработку персональных данных
+                    </p>
+                </div>
+                <div class="footer-left">
+                    <img src="{% static 'main/images/vk.png'%}">
+                    <img class="tg" src="{% static 'main/images/tg.png'%}">
+                    <img src="{% static 'main/images/inst.png'%}">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'main/js/script_index.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/excursion.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/font.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/notification.css' %}">
+    <title>Экскурсионный тур</title>
+</head>
+<body>
+    <section class="header-section">
+        <nav class="menu-header">
+            <div class="logo-header">
+                <a href="{% url 'index'%}">
+                    <p>Speed & Travel</p>
+                </a>
+            </div>
+            <div class="contact-info">  
+                <p>+7 (900) 222 55 44</p>
+                <a id="id_aboutUs">
+                    <p>About us</p>
+                </a>
+            </div>
+        </nav>
+    </section>
+    <section class="info1">
+        <div class="title-text-full">
+            <span>Каталог</span>
+            <span>Экскурсионных туров</span>
+        </div>
+        <div class="quote-full">
+            <p>Пауло Коэльо</p>
+            <div class="quote">
+                <p>
+                    «Путешествие меняет тебя. Оно оставляет следы в памяти, в 
+                    привычках, в сердце. После каждого путешествия ты уже не тот, 
+                    кем был раньше.»
+                </p>
+            </div>
+        </div>
+        <div class="photo-full">
+            <a href="#">
+                <img class="photo1" src="{% static 'main/images/gorn1.jpg'%}">
+            </a>
+            <img class="photo2" src="{% static 'main/images/gorn2.jpg'%}">
+            <img class="photo3" src="{% static 'main/images/gorn3.jpg'%}">
+            <img class="photo4" src="{% static 'main/images/gorn4.jpg'%}">
+        </div>
+    </section>
+    <section class="manual">
+        <div class="manual-container">
+            <h1>Как забронировать место?</h1>
+            <p>Станьте частью большой семьи Speed & Travel всего за 5 простых шагов:</p>
+            <div class="column1">
+                <div class="form1">
+                    <div class="chapter">
+                        <div class="circle">
+                            <h3>1.</h3>
+                        </div>
+                        <h3 class="h3-text">ОСТАВЛЯЕТЕ ЗАЯВКУ</h3>
+                    </div>
+                    <p>Заполните форму обратной связи на сайте, выбрав предварительно подходящие даты путешествия.</p>
+                </div>
+                <img class="photo4" src="{% static 'main/images/arrow.png'%}">
+                <div class="form2">
+                    <div class="chapter">
+                        <div class="circle">
+                            <h3>2.</h3>
+                        </div>
+                        <h3 class="h3-text">ОБСУЖДАЕМ ДЕТАЛИ</h3>
+                    </div>
+                    <p>Мы связываемся с вами в удобное для вас время и обсуждаем все детали, отвечаем на все оставшиеся вопросы. Для брони нужен только ваши паспортные данные.</p>
+                </div>
+                <img class="photo4" src="{% static 'main/images/arrow.png'%}">
+                <div class="form3">
+                    <div class="chapter">
+                        <div class="circle">
+                            <h3>3.</h3>
+                        </div>
+                        <h3 class="h3-text">ДОГОВОР И ПРЕДОПЛАТА</h3>
+                    </div>
+                    <p>Заключаем с вами договор. Вы вносите предоплату в 10 000 рублей как гарант бронирования. Оставшуюся часть суммы вносите уже по прибытии на место.</p>
+                </div>
+            </div>
+            <div class="column2">
+                <div class="form1">
+                    <div class="chapter">
+                        <div class="circle">
+                            <h3>4.</h3>
+                        </div>
+                        <h3 class="h3-text">АВИАБИЛЕТЫ</h3>
+                    </div>
+                    <p>Помогаем вам с выбором авиабилетов. Наш отдел мониторит всё за вас и предлагает вам лучшие из возможных вариантов. Выбираем. Оплачиваем.</p>
+                </div>
+                <img class="photo4" src="{% static 'main/images/arrow.png'%}">
+                <div class="form2">
+                    <div class="chapter">
+                        <div class="circle">
+                            <h3>5.</h3>
+                        </div>
+                        <h3 class="h3-text">ЧАТ УЧАСТНИКОВ</h3>
+                    </div>
+                    <p>Добавляем вас в чат участников. Знакомимся :) Отправляем вам памятку, чек-листы перед поездкой. Менеджер отдела заботы сопровождает вас 24/7.</p>
+                </div>
+                <img class="photo4" src="{% static 'main/images/arrow.png'%}">
+                <div class="form3">
+                    <img class="photo" src="{% static 'main/images/ticket_excursion.png'%}">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- БЛОК БРОНИРОВАНИЯ -->
+    <section class="tour">
+        <div class="tour-container">
+            <!-- МАРШРУТ -->
+            <div class="block-1">
+                <div class="route-1">
+                    <div class="route-1-block1">
+                        <h1>Маршрут</h1>
+                        <h3>День 1</h3>
+                        <h3 class="route-1-h3">ПРИБЫТИЕ</h3>
+                        <p>Встреча в аэропорту → трансфер в отель → заселение → отдых → вечером приветственный ужин + briefing по экскурсиям.</p>
+                    </div>
+                    <div class="route-1-block2">
+                        <img class="photo2" src="{% static 'main/images/right_arrow.png'%}">
+                    </div>
+                </div>
+                <div class="route-2">
+                    <h3>Дни со 2 по предпоследний</h3>
+                    <h3 class="route-2-h3">ЭКСКУРСИИ</h3>
+                    <p>Каждый день: завтрак → выезд на экскурсию → обед в местном кафе/ресторане → продолжение экскурсии → возвращение в отель → ужин → свободное время.</p>
+                    <p>Сколько дней катания? Это зависит от длины вашего тура. Пример:</p>
+                    <img class="photo2" src="{% static 'main/images/tabl.png'%}">
+                </div>
+                <div class="route-3">
+                    <h3>Последний день</h3>
+                    <h3 class="route-3-h3"">Отъезд</h3>
+                    <p>Завтрак → свободное время (сувениры / последние фото) → сбор вещей → обед → трансфер в аэропорт.</p>
+                </div>
+            </div>
+            <div class="block-2">
+                <div class="block-2-container">
+                    <h1>185 400 ₽</h1>
+                    <p class="text1">Безопасное бронирование</p>
+                    <p class="text2">25 000 ₽ для бронирования места в группе</p>
+                    {% if user.is_authenticated%}
+                        <button id="btnOpen">Хочу с вами</button>
+                    {% else %}
+                        <a href="{% url 'login' %}">
+                            <button>Войти в аккаунт</button>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="arrange" id="id_arrange">
+        <form method="post">
+            {% csrf_token %}
+            <div class="arrange-container">
+                <div class="header-text">
+                    <h1>Оставьте заявку</h1>
+                    <span class="close" id="id_close">&times;</span>
+                </div>
+                <div class="direction">
+                    <select name="direction" id="id_direction" class="{% if direction_error %}error-input{% endif %}">
+                        <option value="" selected disabled>Выберите направление</option>
+                        <option value="Paris">Париж, Франция</option>
+                        <option value="Rome">Рим, Италия</option>
+                        <option value="Istanbul">Стамбул, Турция</option>
+                        <option value="Saint-Petersburg">Санкт-Петербург, Россия</option>
+                    </select>
+                </div>
+                <div class="mountains" id="id_mountains">
+                    <div class="paris_excursion" id="id_paris_excursion">
+                        <select name="paris_excursion" class="{% if direction_error %}error-input{% endif %}">
+                            <option value="" selected disabled>Достопремичательность</option>
+                            <option value="eifell_tower">Эйфелева Башня</option>
+                            <option value="louvre">Лувр</option>
+                            <option value="notre_dame">Нотр-Даме-де-Пари</option>
+                        </select>
+                    </div>
+                    <div class="rome_excursion" id="id_rome_excursion">
+                        <select name="rome_excursion" class="{% if direction_error %}error-input{% endif %}">
+                            <option value="" selected disabled>Достопремичательность</option>
+                            <option value="coliseum">Колизей</option>
+                            <option value="pantheon">Пантеон</option>
+                            <option value="st_peter">Собр Святого Петра</option>
+                        </select>
+                    </div>
+                    <div class="istanbul_excursion" id="id_istanbul_excursion">
+                        <select name="istanbul_excursion" class="{% if direction_error %}error-input{% endif %}">
+                            <option value="" selected disabled>Достопремичательность</option>
+                            <option value="hagua_sophia">Айя-София</option>
+                            <option value="blue_mosque">Голубая мечеть</option>
+                        </select>
+                    </div>
+                    <div class="saint_excursion" id="id_saint_excursion">
+                        <select name="saint_excursion" class="{% if direction_error %}error-input{% endif %}">
+                            <option value="" selected disabled>Достопремичательность</option>
+                            <option value="hermitage">Эрмитаж</option>
+                            <option value="peter_paul">Петропавловская крепость</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="departure_date">
+                    <p>Дата направления:
+                        <input type="date" name="departure_date"
+                            class="{% if departure_date or departure_date_today_error %}error-input{% endif %}">
+                    </p>
+                </div>
+                <div class="booking-form">
+                    <div class="fio">
+                        <input type="text" name="name" placeholder="Имя" class="{% if name_error %}error-input{% endif %}">
+                        <input type="text" name="surname" placeholder="Фамилия"
+                            class="{% if surname_error %}error-input{% endif %}">
+                        <input type="text" name="patronymic" placeholder="Отчество">
+                    </div>
+                    <div class="contacts">
+                        <input type="tel" name="number" placeholder="Телефон"
+                            class="{% if number_error %}error-input{% endif %}">
+                        <input type="email" name="email" placeholder="Email"
+                            class="{% if email_error %}error-input{% endif %}">
+                    </div>
+                    <div class="personal_data">
+                        <input type="checkbox" name="personal_data" id="id_personal_data">
+                        <label for="id_personal_data">Я согласен на обработку персональных данных</label>
+                    </div>
+                </div>
+                {% if error_message %}
+                <div class="error_message">
+                    {{error_message}}
+                </div>
+                {% endif %}
+                <button type="submit">Бронировать</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <div class="footer-full">
+            <div class="footer">
+                <div class="footer-right">
+                    <h1>Speed & Travel</h1>
+                    <p>Данная услуга не является туроператорской деятельностью.
+                        Под туром или путешествием подразумевается разовая помощь в организации поездки
+                        от имени заказчика согласно договору поручения. ИП Як. Даниил Алексеевич,
+                        ИНН 784652097543, ОГРНИП 548967663216590.
+                    </p>
+                    <p>© Все права защищены</p>
+                </div>
+                <div class="footer-center">
+                    <h3>+7 991 645 86 55</h3>
+                    <h3>info@speedtravel.ru</h3>
+                    <p>Политика персональных данных<br>
+                        Политика возврата денежных средств<br>
+                        Согласие на получение рекламной информации<br>
+                        Согласие на обработку персональных данных
+                    </p>
+                </div>
+                <div class="footer-left">
+                    <img src="{% static 'main/images/vk.png'%}">
+                    <img class="tg" src="{% static 'main/images/tg.png'%}">
+                    <img src="{% static 'main/images/inst.png'%}">
+                </div>
+            </div>
+    </footer>
+    <script src="{% static 'main/js/script_excursion.js' %}"></script>
+</body>
+</html>

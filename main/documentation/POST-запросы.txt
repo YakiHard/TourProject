@@ -1,0 +1,102 @@
+POST-запросы:
+-------------- ЭКСКУРСИОННЫЙ ТУР -------------- 
+1) Направление - direction
+2) Рим, Италия - rome_excursion                                         --- (Колизей, Пантеон)
+3) Париж, Франция - rome_excursion                                      --- (Эйфелева башня, Лувр)
+4) Лондон, Великобритания - rome_excursion                              --- (Букингемский дворец, Тауэр)
+5) Стамбул, Турция - rome_excursion                                     --- (Галатская башня)
+6) Дата выезда - departure_date
+7) Продолжительность - duration
+8) Программа - programma_tour
+9) historical - Исторические достопримечательности                      --- checkbox
+10) museum - Музеи и галереи                                            --- checkbox
+11) nature - Природные красоты                                          --- checkbox
+12) beach - Пляжный отдых                                               --- checkbox
+13) shopping - Шоппинг-туры                                             --- checkbox
+14) extreme - Экстремальные развлечения                                 --- checkbox
+15) night - Ночная жизнь                                                --- checkbox
+16) gastro - Гастрономические туры                                      --- checkbox
+17) kids - Семейные программы                                           --- checkbox
+18) photo - Фото-туры                                                   --- checkbox
+19) name - Имя                                                     
+20) surname - Фамилия                                                 
+21) patronymic - Отчество                                              
+22) number - Телефон                                         
+23) email - Email
+24) pasport_series - Серия паспорта
+25) pasport_number - Номер паспорта
+26) birth_date - Дата рождения
+27) address - Место прроживания
+28) personal_data - Согласие на обработку персональных данных
+29) advertise_valls - Согласие на получение рекламы и звонков
+-------------- ПЛЯЖНЫЙ ТУР -------------- 
+1) Направление - direction
+2) Пхукет, Таиланд - phuket_excursion                                   --- (Патонг, Ката)
+3) Хургада, Египет - hurghada_excursion                                 --- (Сахл Хашиш, Эль-Гуна)
+4) Бали, Индонезия - bali_excursion                                     --- (Кута, Нуса Дуа)
+5) Мале, Мальдивы - male_excursion                                      --- (Ари Атолл, Баа Атолл)
+6) Дата выезда - departure_date
+7) Продолжительность - duration
+8) Тип номера - room_type
+9) Завтрак - breakfast                                                  --- checkbox
+10) Обед - lunch                                                        --- checkbox
+11) Ужин - dinner                                                       --- checkbox
+12) Wi-Fi - wifi                                                        --- checkbox
+13) Медицинская страховка - med_insurance                               --- checkbox
+14) Транспорт - transport                                               --- checkbox
+15) Дополнительный тур - tour_types                                     --- ( ВЫБОР - Экскурсионный)
+16) Программа - programma_tour
+17) historical - Исторические достопримечательности                     --- checkbox
+18) museum - Музеи и галереи                                            --- checkbox
+19) nature - Природные красоты                                          --- checkbox
+20) beach - Пляжный отдых                                               --- checkbox
+21) shopping - Шоппинг-туры                                             --- checkbox
+22) extreme - Экстремальные развлечения                                 --- checkbox
+23) night - Ночная жизнь                                                --- checkbox
+24) gastro - Гастрономические туры                                      --- checkbox
+25) kids - Семейные программы                                           --- checkbox
+26) photo - Фото-туры                                                   --- checkbox
+27) name - Имя                                                     
+28) surname - Фамилия                                                 
+29) patronymic - Отчество                                              
+30) number - Телефон                                         
+31) email - Email
+32) pasport_series - Серия паспорта
+33) pasport_number - Номер паспорта
+34) birth_date - Дата рождения
+35) address - Место прроживания
+36) personal_data - Согласие на обработку персональных данных
+37) advertise_valls - Согласие на получение рекламы и звонков
+-------------- ГОРНОЛЫЖНЫЙ ТУР -------------- 
+1) Направление - direction
+2) Церматт, Швейцария - zermatt_excursion                               --- (Маттерхорн, Ротхорн)
+3) Гриндельвальд, Швейцария - grindelwald_excursion                     --- (Айгер)
+4) Шамони, Франция - chamonix_excursion                                 --- (Монблан, Бреван)
+5) Каруизо, Италия - caruiso_excursion                                  --- (Гран-Сан-Бернардо, Валь-Гардена)
+6) Дата выезда - departure_date                               
+7) Продолжительность - duration
+8) Подъемники - lifts
+9) Оборудование - equipment
+10) Дополнительный тур - tour_types                                     --- (ВЫБОР - Экскурсионный)
+11) Программа - programma_tour
+12) historical - Исторические достопримечательности                     --- checkbox
+13) museum - Музеи и галереи                                            --- checkbox
+14) nature - Природные красоты                                          --- checkbox
+15) beach - Пляжный отдых                                               --- checkbox
+16) shopping - Шоппинг-туры                                             --- checkbox
+17) extreme - Экстремальные развлечения                                 --- checkbox
+18) night - Ночная жизнь                                                --- checkbox
+19) gastro - Гастрономические туры                                      --- checkbox
+20) kids - Семейные программы                                           --- checkbox
+21) photo - Фото-туры                                                   --- checkbox
+22) name - Имя                                                     
+23) surname - Фамилия                                                 
+24) patronymic - Отчество                                              
+25) number - Телефон                                         
+26) email - Email
+27) pasport_series - Серия паспорта
+28) pasport_number - Номер паспорта
+29) birth_date - Дата рождения
+30) address - Место прроживания
+31) personal_data - Согласие на обработку персональных данных
+32) advertise_valls - Согласие на получение рекламы и звонков
