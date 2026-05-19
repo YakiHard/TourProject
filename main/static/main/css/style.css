@@ -81,20 +81,8 @@ body {
     font-weight: bold;
 }
 
-.contact-info .about {
-    background-color: #009175;
-    color: #F0F0F0;
-    border: 2px solid #009175;
-    padding: 5px 20px;
-
-    &:hover {
-        background-color: #2C3E50;
-        border: 2px solid #2C3E50;
-    }
-}
-
 .contact-info p {
-    padding: 5px 10px;
+    padding: 5px 15px;
     border-radius: 20px;
     border: 2px solid #009175;
     transition: all 0.4s ease;
@@ -103,6 +91,22 @@ body {
     &:hover {
         background-color: #009175;
         border: 2px solid #009175;
+        cursor: pointer;
+        color: #F0F0F0;
+    }
+}
+
+.contact-info .login-register {
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 2px solid #009175;
+    background-color: #009175;
+    transition: all 0.4s ease;
+    color: #F0F0F0;
+
+    &:hover {
+        background-color: #2C3E50;
+        border: 2px solid #2C3E50;
         cursor: pointer;
         color: #F0F0F0;
     }

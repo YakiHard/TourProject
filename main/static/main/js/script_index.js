@@ -75,6 +75,17 @@ closeExit.onclick = function(){
     },1000)
 }
 
+// Уведомление
+setTimeout(()=> {
+    const thanks = document.querySelector('.messages_thanks')
+    if(thanks) {
+        thanks.classList.add('output')
+        setTimeout(()=> {
+            thanks.remove('output')
+        }, 1000)
+    }
+},3000)
+
 // Ошибка
 const scrollOpenError = document.querySelector('.error_message')
 

@@ -146,7 +146,13 @@
                     <h1>240 340 ₽</h1>
                     <p class="text1">Безопасное бронирование</p>
                     <p class="text2">25 000 ₽ для бронирования места в группе</p>
-                    <button class="btnOpen" id="btnOpen">Хочу с вами</button>
+                    {% if user.is_authenticated %}
+                        <button class="btnOpen" id="btnOpen">Хочу с вами</button>
+                    {% else %}
+                        <a href="{% url 'login' %}">
+                            <button>Войти в аккаунт</button>
+                        </a>
+                    {% endif %}
                 </div>
             </div>               
         </div>

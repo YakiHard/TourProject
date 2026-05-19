@@ -15,7 +15,7 @@ body {
     width: 150vh;
     overflow: hidden;
     position: relative;
-    background: linear-gradient(100deg, #26ac92, #216255,	#e2c28b);
+    background: linear-gradient(100deg, #26ac92, #216255, #4de56b);
     background-size: 7% 200%;
     animation: bColor 40s infinite alternate, appear 1s ease 0.2s forwards;
     opacity: 0;

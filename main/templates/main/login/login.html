@@ -4,37 +4,36 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'main/css/login/login.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/font.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/notification.css' %}">
     <title>Вход</title>
 </head>
 <body>
-    
     <div class="container">
-        
         <div class="left">
             <h1>Welcome Back!</h1>
         </div>
-        
         <div class="login">
             <div class="login-container">
                 <h2>Вход в аккаунт</h2>
                 <form method="post">
                     {% csrf_token %}
                     <div>
-                        <input type="text" name="username" placeholder="Логин" required>
-                    </div>
-        
+                        <input type="text" name="username" placeholder="Логин" class="{% if error_user_pass %}error-input{% endif %}" required>
+                    </div>   
                     <div>
-                        <input type="password" name="password" placeholder="Пароль" required>
+                        <input type="password" name="password" placeholder="Пароль" class="{% if error_user_pass %}error-input{% endif %}" required>
                     </div>
-        
+                    {% if error_user_pass %}
+                        <div class="error_message">
+                            {{error_user_pass}}
+                        </div>
+                        {% endif %}
                     <button type="submit">Войти</button>
                 </form>
                 <p>Нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a></p>
                 <p><a href="{% url 'index' %}">← На главную</a></p>
             </div>
-        
-        </div>
-        
+        </div>  
     </div>
 </body>
 </html>

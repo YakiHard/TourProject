@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/login/register.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/notification.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/font.css' %}">
     <title>Регистрация</title>
 </head>
 <body>
-    <h2>Регистрация</h2>
-    
-    <form method="post">
-        {% csrf_token %}
-        
-        {{ form.as_p }}  <!-- автоматически рисует поля: логин, пароль, подтверждение -->
-        
-        <button type="submit">Зарегистрироваться</button>
-    </form>
-    
-    <p>Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
-    <p><a href="{% url 'index' %}">← На главную</a></p>
+    <div class="container">
+        <div class="left">
+            <h1>Welcome Back!</h1>
+        </div>
+        <div class="login">
+            <div class="login-container">
+                <h2>Регистрация</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div>
+                        <input type="text" name="username" placeholder="Логин" class="{% if username_dublicate %}error-input{% endif %}" required>
+                    </div>   
+                    <div>
+                        <input type="password" name="password1" placeholder="Пароль" class="{% if username_dublicate %}error-input{% endif %}" required>
+                    </div>
+                    <div>
+                        <input type="password" name="password2" placeholder="Повторите пароль" class="{% if username_dublicate %}error-input{% endif %}" required>
+                    </div>
+                    {% if username_dublicate %}
+                    <div class="error_message">
+                        {{username_dublicate}}
+                    </div>
+                    {% endif %}
+                    {% if pass_len_error %}
+                        <div class="error_message">
+                            {{pass_len_error}}
+                        </div>
+                    {% endif %}
+                    {% if pass1_pass2_error %}
+                        <div class="error_message">
+                            {{pass1_pass2_error}}
+                        </div>
+                    {% endif %}
+                    <button type="submit">Зарегистрироваться</button>
+                </form>
+                <p>Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a> </a></p>
+                <p><a href="{% url 'index' %}">← На главную</a></p>
+            </div>
+        </div>  
+    </div>
 </body>
 </html>

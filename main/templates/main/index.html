@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="{% static 'main/css/notification.css'%}">
 </head>
 <body>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="messages_thanks">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
     <div class="top">
         <div class="top-container" id="id_top">
             <span>&uarr;</span>
@@ -30,11 +37,11 @@
                 <p class="about" id="id_aboutUs">О нас</p>
                 {% if user.is_authenticated %}
                     <a href="{% url 'logout' %}">
-                        <p>Выйти</p>
+                        <p class="login-register">Выйти</p>
                     </a>
                 {% else %}
-                    <a href="{% url 'register' %}">
-                        <p>Регистрация</p>
+                    <a href="{% url 'login' %}">
+                        <p class="login-register">Войти</p>
                     </a>
                 {% endif  %}
             </div>

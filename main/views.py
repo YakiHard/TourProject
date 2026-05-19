@@ -2,10 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from datetime import date
 from django.core.exceptions import ValidationError
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from django.contrib.auth import logout
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login
 from .models import Presentation, ExcursionTour, BeachTour, SkiTour
 
@@ -13,34 +13,45 @@ def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        
+
         user = authenticate(request, username=username, password=password)
-        
+
         if user is not None:
             auth_login(request, user)
-            return redirect(request.POST.get('next', 'index'))
+            messages.success(request, 'Добро пожаловать!')
+            return redirect('index')
         else:
-            return render(request, 'название_твоего_шаблона.html', {
-                'error': 'Неверный логин или пароль',
-                'form_visible': True, 
+            return render(request, 'main/login/login.html', {
+                'error_user_pass': 'Неверный логин или пароль'
             })
-    
-    return redirect('index')
+    return render(request, 'main/login/login.html')
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect("index")
-    else:
-        form = UserCreationForm()
+        username = request.POST.get('username')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
 
-        
-    return render(request, 'main/login/register.html', {
-            'form': form
-        })
+        errors = {}
+
+        if User.objects.filter(username=username).exists():
+            errors['username_dublicate'] = 'Имя пользовавтеля существует'
+        if len(password1) < 6:
+            errors['pass_len_error'] = 'Пароль должен быть не менее 6 символов'
+        if (password1 != password2):
+            errors['pass1_pass2_error'] = 'Пароли не совпадают'
+        if errors:
+            errors['errors'] = True
+            return render(request, 'main/login/register.html', errors)
+
+        user = User.objects.create_user(
+            username=username,
+            password=password1,
+        )
+        auth_login(request, user)
+        return redirect('login')
+    
+    return render(request, 'main/login/register.html')
 
 def logout_views(request):
     if request.method == 'GET':
