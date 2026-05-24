@@ -3,84 +3,222 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: #F5F5F5;
-    /* background-color: #26ac92; */
 }
 
 .container {
     display: flex;
-}
-
-.left {
+    justify-content: space-between;
+    align-items: center;
     height: 100vh;
-    width: 150vh;
-    overflow: hidden;
+    padding: 0 200px;
     position: relative;
-    background: linear-gradient(100deg, #26ac92, #216255, #4de56b);
-    background-size: 7% 200%;
-    animation: bColor 40s infinite alternate, appear 1s ease 0.2s forwards;
-    opacity: 0;
 }
 
-@keyframes appear {
+.container::before {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(100px);
+    position: absolute;
+    z-index: 1;
+}
+
+.container .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 300px;
+}
+
+.container .left h1 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Unbounded', Arial, sans-serif;
+    font-size: 70px;
+    color: #F0F0F0;
+    z-index: 2;
+    max-width: 200px;
+}
+
+.left .photo1 {
+    width: 170px;
+    position: absolute;
+    animation: photo1 30s infinite alternate;
+    opacity: 1;
+}
+
+.left .photo2 {
+    width: 200px;
+    position: absolute;
+    left: 300px;
+    animation: photo2 30s infinite alternate;
+    opacity: 1;
+}
+
+.left .photo3 {
+    width: 170px;
+    right: 200px;
+    position: absolute;
+    animation: photo3 10s infinite alternate;
+    opacity: 1;
+}
+
+.left .photo4 {
+    width: 170px;
+    right: 250px;
+    position: absolute;
+    animation: photo4 10s infinite alternate;
+    opacity: 1;
+}
+
+.left .photo5 {
+    width: 170px;
+    position: absolute;
+    left: 240px;
+    animation: photo5 10s infinite alternate;
+    opacity: 1;
+}
+
+@keyframes photo1 {
     0% {
-        opacity: 0;
+        transform: scale(5);
+        opacity: 1;
+    }
+    20% {
+        transform: scale(6) rotate(40deg);
+        opacity: 0.5;
+        
+    }
+    40% {
+        transform: scale(2) rotate(-30deg);
+        opacity: 1;
+    }
+    60% {
+        transform: scale(3) rotate(10deg);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(4);
+        opacity: 0.5;
     }
     100% {
+        transform: scale(5) rotate(-10deg);
         opacity: 1;
     }
 }
 
-.left::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    backdrop-filter: blur(1px);
-}
-
-@keyframes bColor {
+@keyframes photo2 {
     0% {
-        transform: translateX(0);
-    }
-    50% {
-        background-position: 200% 100%; 
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-.container h1 {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -70%);
-    font-family: 'Unbounded', Arial, sans-serif;
-    font-size: 100px;
-    color: #F0F0F0;
-    z-index: 2;
-}
-
-.login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    font-family: 'Montserrat';
-    animation: appear2 1s ease 0.4s forwards;
-    opacity: 0;
-}
-
-@keyframes appear2 {
-    0% {
+        transform: scale(1);
         opacity: 0;
     }
+    20% {
+        transform: scale(2) rotate(40deg);
+        opacity: 1;
+        
+    }
+    40% {
+        transform: scale(4) rotate(30deg);
+        opacity: 1;
+    }
+    60% {
+        transform: scale(3) rotate(10deg);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(1);
+        opacity: 1;
+    }
     100% {
+        transform: scale(3) rotate(-10deg);
+        opacity: 0;
+    }
+}
+
+@keyframes photo3 {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(2) rotate(40deg);
+        opacity: 0.5;
+        
+    }
+    40% {
+        transform: scale(4) rotate(-30deg);
+        opacity: 1;
+    }
+    60% {
+        transform: scale(6) rotate(50deg);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3) rotate(-20deg);
+        opacity: 1;
+    }
+}
+
+@keyframes photo4 {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(1) rotate(-40deg);
+        opacity: 0.5;
+        
+    }
+    40% {
+        transform: scale(0.5) rotate(20deg);
+        opacity: 1;
+    }
+    60% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(2) rotate(30deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(6) rotate(-10deg);
+        opacity: 1;
+    }
+}
+
+@keyframes photo5 {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(2) rotate(-40deg);
+        opacity: 0;
+        
+    }
+    40% {
+        transform: scale(4) rotate(30deg);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(5.5) rotate(-10deg);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(4);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(6) rotate(-10deg);
         opacity: 1;
     }
 }
@@ -88,6 +226,9 @@ body {
 .login-container {
     max-width: 500px;
     width: 100%;
+    padding: 60px;
+    z-index: 2;
+    font-family: 'Montserrat';
 }
 
 .login-container h2 {

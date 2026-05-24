@@ -1,4 +1,5 @@
 const topScroll = document.getElementById('id_top')
+const contacts = document.getElementById('contacts')
 const aboutUs = document.getElementById('id_aboutUs')
 const reviews = document.getElementById('id_reviews')
 const btnDirections = document.getElementById('id_directions')
@@ -23,6 +24,11 @@ aboutUs.onclick = function() {
 btnDirections.onclick = function() {
     document.querySelector('.tour').scrollIntoView({'behavior': 'smooth'})
 }
+
+contacts.onclick = function() {
+    document.querySelector('.footer-full').scrollIntoView({'behavior': 'smooth'})
+}
+   
 
 topScroll.onclick = function() {
     window.scrollTo({ 

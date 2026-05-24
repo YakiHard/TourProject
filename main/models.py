@@ -25,10 +25,10 @@ class Tour(models.Model):
     ]
 
     STATUS_CHOICES = [
-        ('pending','Новая'),        # только создана
-        ('processing','В обработке'), # админ смотрит
-        ('cancel','Отменено'),
-        ('completed','Завершено')   # готово
+        ('pending','НОВАЯ'),       
+        ('processing','В ОБРАБОТКЕ'), 
+        ('completed','ЗАВЕРШЕНО'),
+        ('cancel','ОТМЕНЕНО'),
     ]
 
     status = models.CharField(choices=STATUS_CHOICES, default="pending")

@@ -13,42 +13,48 @@
     <div class="container">
         <div class="left">
             <h1>Welcome Back!</h1>
+            <img class="photo1" src="{% static 'main/images/figure10.png' %}">
+            <img class="photo2" src="{% static 'main/images/figure7.png' %}">
+            <img class="photo3" src="{% static 'main/images/figure8.png' %}">
+            <img class="photo4" src="{% static 'main/images/figure9.png' %}">
+            <img class="photo5" src="{% static 'main/images/figure1066.png' %}">
         </div>
-        <div class="login">
-            <div class="login-container">
-                <h2>Регистрация</h2>
-                <form method="post">
-                    {% csrf_token %}
-                    <div>
-                        <input type="text" name="username" placeholder="Логин" class="{% if username_dublicate %}error-input{% endif %}" required>
-                    </div>   
-                    <div>
-                        <input type="password" name="password1" placeholder="Пароль" class="{% if username_dublicate %}error-input{% endif %}" required>
-                    </div>
-                    <div>
-                        <input type="password" name="password2" placeholder="Повторите пароль" class="{% if username_dublicate %}error-input{% endif %}" required>
-                    </div>
-                    {% if username_dublicate %}
-                    <div class="error_message">
-                        {{username_dublicate}}
-                    </div>
-                    {% endif %}
-                    {% if pass_len_error %}
-                        <div class="error_message">
-                            {{pass_len_error}}
-                        </div>
-                    {% endif %}
-                    {% if pass1_pass2_error %}
-                        <div class="error_message">
-                            {{pass1_pass2_error}}
-                        </div>
-                    {% endif %}
-                    <button type="submit">Зарегистрироваться</button>
-                </form>
-                <p>Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a> </a></p>
-                <p><a href="{% url 'index' %}">← На главную</a></p>
-            </div>
-        </div>  
+        <div class="login-container">
+            <h2>Регистрация</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                    <input type="text" name="username" placeholder="Логин"
+                        class="{% if username_dublicate %}error-input{% endif %}" required>
+                </div>
+                <div>
+                    <input type="password" name="password1" placeholder="Пароль"
+                        class="{% if pass_len_error %}error-input{% endif %}" required>
+                </div>
+                <div>
+                    <input type="password" name="password2" placeholder="Повторите пароль"
+                        class="{% if pass1_pass2_error %}error-input{% endif %}" required>
+                </div>
+                {% if username_dublicate %}
+                <div class="error_message">
+                    {{username_dublicate}}
+                </div>
+                {% endif %}
+                {% if pass_len_error %}
+                <div class="error_message">
+                    {{pass_len_error}}
+                </div>
+                {% endif %}
+                {% if pass1_pass2_error %}
+                <div class="error_message">
+                    {{pass1_pass2_error}}
+                </div>
+                {% endif %}
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+            <p>Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a> </a></p>
+            <p><a href="{% url 'index' %}">← На главную</a></p>
+        </div>
     </div>
 </body>
 </html>

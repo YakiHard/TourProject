@@ -53,7 +53,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 150px;
+    padding: 0 150px;
 }
 
 .menu-header p {
@@ -73,7 +73,7 @@ body {
 .contact-info{
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     font-family: 'Liter', sans-serif;
     font-weight: 400px;
     font-style: normal;

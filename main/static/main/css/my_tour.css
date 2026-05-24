@@ -18,7 +18,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 150px;
+    padding: 0 150px;
 }
 
 .menu-header p {
@@ -39,9 +39,8 @@ body {
     display: flex;
     align-items: center;
     gap: 30px;
-    font-family: 'Liter', sans-serif;
+    font-family: 'Liter';
     font-weight: 400px;
-    font-style: normal;
     font-size: 15px;
     font-weight: bold;
 }
@@ -58,92 +57,149 @@ body {
     cursor: pointer;
 }
 
-/* ФИЛЬТРЫ */
-.filter {
+.main {
+    padding: 150px;
     display: flex;
+    justify-content: center;
+    font-family: 'Montserrat';
+}
+
+.main .tour-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
     justify-content: space-between;
-    margin: 200px 400px 50px 400px;
-    gap: 50px;
+    width: 100%;
 }
 
-.filter a {
-    text-decoration: none;
-}
-
-/* СОРТИРОВКА ПО НАПРАВЛЕНИЮ */
-.filter-direction {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid white;
-    border-radius: 20px;
-    background-color: white;
-    padding: 5px 20px;
-}
-
-.filter-direction p {
-    text-decoration: none;
-    color: black;
-    font-family: 'Montserrat';
-}
-
-/* СОРТИРОВКА ПО ДАТЕ */
-.filter_date {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    padding: 5px 20px;
-    border-radius: 20px;
-    gap: 10px;
-}
-
-.filter_date form {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.filter_date input {
-    border-radius: 20px;
-    border: 2px solid #03146F;
-    padding: 2px 10px;
-    font-family: 'Montserrat';
-    cursor: pointer;
-}
-
-.filter_date button {
-    border-radius: 20px;
-    border: 2px solid #384171;
-    padding: 5px 20px;
-    cursor: pointer;
-    background-color: #384171;
-    color: white;
-    font-family: 'Montserrat';
-}
-
-.filter_date form a {
-    border-radius: 20px;
-    border: 2px solid #384171;
-    background-color: #384171;
-    color: white;
-    padding: 5px 20px;
-    font-size: 14px;
-    font-family: 'Montserrat';
-}
-
-/* НАШИ ТУРЫ */
-.our_tour_full {
-    margin: 0 400px;
-    font-family: 'Montserrat';
-}
-
-.our_tour{
+.tourId {
+    background-color: #ffffff;
+    border-radius: 30px;
     padding: 20px;
+    position: relative;
+    padding-top: 110px;
+    box-shadow: 4px 4px 17px -3px rgba(34, 60, 80, 0.2);
+    max-width: 800px;
 }
 
-.our_tour .tour{
+.tourId .direction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 25px;
+    background-color: #009175;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px; 
+}
+
+.tourId .direction h3 {
+    font-family: 'Unbounded', Arial, sans-serif;
+    font-size: 25px;
+}
+
+/* СТАТУС */
+.direction-status-pending {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    background-color: #e67e22;
+    border-radius: 30px;
+    padding: 0 10px;
+    font-weight: 700;
+}
+
+.direction-status-processing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    background-color: #3498db;
+    border-radius: 30px;
+    padding: 0 10px;
+    font-weight: 700;
+}
+
+.direction-status-completed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    background-color: #2ecc71;
+    border-radius: 30px;
+    padding: 0 10px;
+    font-weight: 700;
+}
+
+.direction-status-cancel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    background-color: red;
+    border-radius: 30px;
+    padding: 0 10px;
+    font-weight: 700;
+}
+
+.tourId .place {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    background-color: #F5F5F5;
+    border-radius: 20px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+}
+
+.tourId .place img {
+    width: 100px;
+    border-radius: 20px;
+}
+
+.tourId .data {
+    display: flex;
+    gap: 40px;
+    margin-top: 10px;
+}
+
+.tourId .data .user,
+.tourId .data .phone {
+    display: flex;
+    gap: 10px;
+    align-items: center;
     border-radius: 10px;
-    border-top: 10px solid #03146F;
-    padding: 30px;
-    background-color: white;
+    padding: 5px 10px;
+    background-color: #F0F0F0;
+}
+
+.tourId .button {
+    display: flex;
+    gap: 20px;
+}
+
+.tourId .button button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #2C3E50;
+    border: 1px solid #2C3E50;
+    font-family: 'Montserrat';
+    color: #F0F0F0;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #009175;
+        border: 1px solid #009175;
+        color: #F0F0F0;
+    }
 }

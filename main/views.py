@@ -99,7 +99,7 @@ def index(request):
             tours.full_clean()
             tours.save()
             messages.success(request, 'Заявка на презентацию отправлена!')
-            return redirect('my_tour_index')
+            return redirect('index')
         except ValidationError:
             return render(request, 'main/index.html', {
                 'error': 'Повторите запрос'
@@ -329,11 +329,49 @@ def my_tour(request):
         tours.append(tour)
     for tour in ski_tours:
         tours.append(tour)
+    if not tours:
+        return render(request, 'main/null.html')
     return render(request, 'main/my_tour.html', {
         'tours': tours
     })
 
-    
+def cancel_tour(request, tour_id):
+    for model in [ExcursionTour, BeachTour, SkiTour]:
+        try:
+            tour = model.objects.get(id=tour_id, user=request.user)
+            tour.status = 'cancel'
+            tour.save()
+            messages.success(request, 'Заявка отмненена')
+            break
+        except:
+            pass
+    return redirect('my_tour_index')
+
+def restart_tour(request, tour_id):
+    for model in[ExcursionTour, BeachTour, SkiTour]:
+        try:
+            tour = model.objects.get(id=tour_id, user=request.user)
+            tour.status = 'pending'
+            tour.save()
+            messages.success(request, 'Заявка возобновлена')
+            break
+        except:
+            pass
+    return redirect('my_tour_index')
+
+def delete_tour(request, tour_id):
+    for model in[ExcursionTour, BeachTour, SkiTour]:
+        try:
+            tour = model.objects.get(id=tour_id, user=request.user)
+            tour.delete()
+            messages.success(request, 'Заявка удалена')
+            break
+        except:
+            pass
+    return redirect('my_tour_index')
+
+def null(request):
+    return render(request, 'main/null.html')
 
 def ski_history(request):
     return render(request, 'main/ski_history.html')

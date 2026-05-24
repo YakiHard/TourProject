@@ -17,7 +17,6 @@
             </div>
         {% endfor %}
     {% endif %}
-
     <section class="header-section">
         <nav class="menu-header">
             <div class="logo-header">
@@ -25,55 +24,92 @@
                     <p>Speed & Travel</p>
                 </a>
             </div>
-            <div class="contact-info">  
-                <p>+7 (900) 222 55 44</p>
-                <a href="/">
-                    <p>About us</p>
-                </a>
+            <div class="contact-info">
+                <p id="id_reviews">Отзывы</p>
+                <p class="about" id="id_aboutUs">О нас</p>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">
+                        <p class="login-register">Выйти</p>
+                    </a>
+                {% else %}
+                    <a href="{% url 'login' %}">
+                        <p class="login-register">Войти</p>
+                    </a>
+                {% endif  %}
             </div>
         </nav>
     </section>
-    <section class="filter">
-        <a href="?sort=direction">
-            <div class="filter-direction">
-                <img src="{% static 'main/images/direction_icon.png'%}" width="30px" height="30px">
-                <p>Сортировка по направлению</p>
-            </div>
-        </a>
-        <div class="filter_date">
-            <img src="{% static 'main/images/date_icon.png'%}" width="35px" height="40px">
-            <form method="get">
-                <input type="date" name="date_from" value=" request.GET.date_from">
-                <input type="date" name="date_to" value=" request.GET.date_to">
-                <button type="submit">Найти</button>
-                <a href="{% url 'my_tour_index'%}">Сбросить</a>
-            </form>
-
-        </div>
-    </section>
-    <section class="our_tour_full">
-        <div class="our_tour">
-            <h2>Все туры:</h2>
+    <section class="main">
+        <div class="tour-list">
             {% for tour in tours %}
-            <div class="tour">
-                <p>Направление: {{ tour.get_direction_display }}
-                <p>Дата: {{ tour.departure_date }}</p>
-                <p>Продолжительность: {{ tour.duration }}</p> 
-                <p> Цена: {{tour.calculate_cost}}</p>
+            <div class="tourId">
+                <div class="direction">
+                    <h3>{{tour.get_direction_display}}</h3>
+                    <div class="direction-status-{{tour.status}}">
+                        <p>{{tour.get_status_display}}</p>
+                    </div>
+    
+                </div>
+                <div class="place">
+                    <!-- ЭКСКУРСИОННЫЙ -->
+                    {% if tour.paris_excursion or tour.rome_excursion or tour.istanbul_excursion or tour.saint_excursion %}
+                    <div class="img">
+                        {% if tour.paris_excursion == "eifell_tower" %}
+                            <img src="{% static 'main/images/EiffelTower.png' %}">
+                        {% elif tour.paris_excursion == "louvre" %}
+                            <img src="{% static 'main/images/Louvre.png' %}">
+                        {% endif %}
+                    </div>
+                    <div class="text">
+                        {% if tour.paris_excursion == "eifell_tower" %}
+                        {{tour.get_paris_excursion_display}}
+                        {% elif tour.paris_excursion == "louvre" %}
+                        {{tour.get_paris_excursion_display}}
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="data">
+                    <p>Дата: {{tour.departure_date}}</p>
+                    <div class="user">
+                        <img src="{% static 'main/images/userIcon.png' %}">
+                        <p>{{tour.name}}</p>
+                    </div>
+                    <div class="phone">
+                        <img src="{% static 'main/images/phoneIcon.png' %}">
+                        <p>{{tour.number}}</p>
+                    </div>
+                    
+                    
+                    <p>Email: {{tour.email}}</p>
+                </div>
+                <div class="button">
+                    {% if tour.status == "cancel" %}
+                    <a href="{% url 'restart_tour' tour.id %}">
+                        <button type="button">Возобновить</button>
+                    </a>
+                    <a href="{% url 'delete_tour' tour.id %}">
+                        <button>Удалить</button>
+                    </a>
+                    {% elif tour.status == "completed" %}
+                    <a href="{% url 'delete_tour' tour.id %}">
+                        <button>Удалить</button>
+                    </a>
+                    {% else %}
+                    <a href="{% url 'cancel_tour' tour.id %}">
+                        <button>Отменить</button>
+                    </a>
+                    {% endif %}
+                </div>
+                
+                
             </div>
             {% empty %}
-                <p>Туров пока нет</p>
-                {% endfor %}
+            {% endfor %}
+        </div>
         </div>
     </section>
-    <script>
-        setTimeout(() => {
-            const thanks = document.querySelector('.messages_thanks');
-            if (thanks) {
-                thanks.classList.add('output');
-                setTimeout(() => thanks.remove(), 1000);
-            }
-        },3000)
-    </script>
+    
+    <script src="{% static 'main/js/script_my_tour.js' %}"></script>
 </body>
 </html>
