@@ -275,6 +275,9 @@ body {
 .manual-container .column2 .form2 p{
     color: #2C3E50;
     max-width: 350px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .manual-container .column2 .form3 img{
@@ -652,3 +655,504 @@ button:hover{
     height: 30px;
     cursor: pointer;
 }
+
+/* ========== АДАПТАЦИЯ НА ВСЕ ШИРИНЫ ========== */
+
+/* Экраны до 1400px */
+@media (max-width: 1400px) {
+    .info1 {
+        margin: 130px 200px;
+    }
+    
+    .manual-container {
+        padding: 60px 200px;
+    }
+    
+    .tour-container {
+        padding: 60px 200px;
+    }
+    
+    .footer {
+        margin: 80px 200px;
+    }
+}
+
+/* Экраны до 1200px */
+@media (max-width: 1200px) {
+    .info1 {
+        margin: 130px 100px;
+    }
+    
+    .manual-container {
+        padding: 60px 100px;
+    }
+    
+    .tour-container {
+        padding: 60px 100px;
+    }
+    
+    .footer {
+        margin: 80px 100px;
+    }
+    
+    .photo-full {
+        justify-content: center;
+        gap: 40px;
+    }
+    
+    /* Фотографии экскурсий - уменьшаем размер, НЕ УБИРАЕМ */
+    .photo-full img {
+        width: 280px;
+    }
+}
+
+/* Экраны до 992px (планшеты) */
+@media (max-width: 992px) {
+    .menu-header {
+        margin: 0 50px;
+    }
+    
+    .info1 {
+        margin: 130px 50px;
+    }
+    
+    .manual-container {
+        padding: 50px 50px;
+    }
+    
+    .manual-container .column1,
+    .manual-container .column2 {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    .manual-container .column1 .form1,
+    .manual-container .column1 .form2,
+    .manual-container .column1 .form3,
+    .manual-container .column2 .form1,
+    .manual-container .column2 .form2 {
+        width: 280px;
+        height: auto;
+        min-height: 210px;
+    }
+    
+    .tour-container {
+        padding: 50px 50px;
+        flex-direction: column;
+    }
+    
+    .route-1-block1 p,
+    .route-2 p,
+    .route-3 p {
+        max-width: 100%;
+    }
+    
+    .route-1-block2 {
+        display: none;
+    }
+    
+    .route-2 img {
+        width: 100%;
+        max-width: 490px;
+        height: auto;
+    }
+    
+    .block-2-container {
+        position: static;
+        max-width: 400px;
+        width: 100%;
+        margin: 50px auto 0;
+        box-sizing: border-box;
+    }
+    
+    .footer {
+        margin: 80px 50px;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
+    .footer-right p {
+        width: auto;
+        max-width: 400px;
+    }
+}
+
+/* Экраны до 768px (мобильные устройства) */
+@media (max-width: 768px) {
+    .menu-header {
+        margin: 0 20px;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    
+    .logo-header p {
+        font-size: 28px;
+        margin: 10px 0;
+    }
+    
+    .contact-info {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .contact-info p {
+        font-size: 13px;
+        padding: 5px 12px;
+    }
+    
+    .info1 {
+        margin: 180px 20px 0 20px;
+    }
+    
+    .title-text-full {
+        font-size: 32px;
+        margin: 100px 0 30px 0;
+    }
+    
+    .quote-full {
+        font-size: 15px;
+    }
+    
+    /* Фотографии экскурсий - становятся в колонку, НО НЕ УБИРАЮТСЯ */
+    .photo-full {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-top: 60px;
+    }
+    
+    /* Фотографии экскурсий остаются видимыми */
+    .photo-full img {
+        width: 250px;
+    }
+    
+    .manual-container {
+        padding: 40px 20px;
+    }
+    
+    .manual-container h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+    
+    .manual-container .column1,
+    .manual-container .column2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .manual-container .column1 .form1,
+    .manual-container .column1 .form2,
+    .manual-container .column1 .form3,
+    .manual-container .column2 .form1,
+    .manual-container .column2 .form2 {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        padding: 20px;
+    }
+    
+    .manual-container .column1 .form1 .chapter,
+    .manual-container .column1 .form2 .chapter,
+    .manual-container .column1 .form3 .chapter,
+    .manual-container .column2 .form1 .chapter,
+    .manual-container .column2 .form2 .chapter {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .manual-container .column1 .form1 p,
+    .manual-container .column1 .form2 p,
+    .manual-container .column1 .form3 p,
+    .manual-container .column2 .form1 p,
+    .manual-container .column2 .form2 p {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .manual-container .column2 .form3 img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+    
+    .tour {
+        margin-top: 100px;
+    }
+    
+    .tour-container {
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    
+    .route-1-block1 h1 {
+        font-size: 40px;
+    }
+    
+    .route-1-block1 h3,
+    .route-2 h3,
+    .route-3 h3 {
+        font-size: 26px;
+    }
+    
+    .route-1-block1 .route-1-h3,
+    .route-2 .route-2-h3,
+    .route-3 .route-3-h3 {
+        margin-left: 30px;
+    }
+    
+    .footer-full {
+        margin-top: 100px;
+        min-height: auto;
+    }
+    
+    .footer {
+        margin: 40px 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .footer-right p {
+        margin-top: 0;
+        width: 100%;
+    }
+    
+    .footer-center p {
+        margin-top: 0;
+    }
+    
+    .footer-left {
+        margin-bottom: 0;
+        justify-content: center;
+    }
+    
+    .arrange-container {
+        padding: 20px 25px;
+        margin: 20px;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+    
+    .contacts {
+        flex-direction: column;
+    }
+    
+    .authorization {
+        padding: 20px 25px;
+        margin: 20px;
+        width: auto;
+    }
+}
+
+/* Экраны до 576px (маленькие телефоны) */
+@media (max-width: 576px) {
+    .menu-header {
+        margin: 0 15px;
+    }
+    
+    .logo-header p {
+        font-size: 24px;
+    }
+    
+    .contact-info {
+        gap: 10px;
+    }
+    
+    .contact-info p {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+    
+    .info1 {
+        margin: 170px 15px 0 15px;
+    }
+    
+    .title-text-full {
+        font-size: 28px;
+        margin: 80px 0 20px 0;
+    }
+    
+    .quote-full {
+        font-size: 13px;
+        padding-left: 12px;
+    }
+    
+    /* Фотографии экскурсий остаются видимыми */
+    .photo-full {
+        gap: 25px;
+        margin-top: 40px;
+    }
+    
+    .photo-full img {
+        width: 200px;
+    }
+    
+    .manual-container {
+        padding: 30px 15px;
+    }
+    
+    .manual-container h1 {
+        font-size: 28px;
+    }
+    
+    .manual-container .column1 .form1,
+    .manual-container .column1 .form2,
+    .manual-container .column1 .form3,
+    .manual-container .column2 .form1,
+    .manual-container .column2 .form2 {
+        padding: 15px;
+    }
+    
+    .manual-container .circle {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .manual-container .circle img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .manual-container .h3-text {
+        font-size: 18px;
+    }
+    
+    .tour-container {
+        padding: 30px 15px;
+    }
+    
+    .route-1-block1 h1 {
+        font-size: 32px;
+    }
+    
+    .route-1-block1 h3,
+    .route-2 h3,
+    .route-3 h3 {
+        font-size: 22px;
+    }
+    
+    .route-1-block1 .route-1-h3,
+    .route-2 .route-2-h3,
+    .route-3 .route-3-h3 {
+        margin-left: 15px;
+    }
+    
+    .block-2-container {
+        padding: 20px;
+    }
+    
+    .block-2-container h1 {
+        font-size: 28px;
+    }
+    
+    .block-2-container .text1 {
+        font-size: 14px;
+    }
+    
+    .block-2-container .text2 {
+        font-size: 13px;
+    }
+    
+    .block-2-container button {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+    
+    .footer {
+        margin: 30px 15px;
+        gap: 25px;
+    }
+    
+    .footer-left {
+        gap: 15px;
+    }
+    
+    .footer-left img {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .footer-left .tg {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .arrange-container {
+        padding: 15px 20px;
+    }
+    
+    .arrange-container h1 {
+        font-size: 24px;
+    }
+    
+    .close {
+        font-size: 32px;
+    }
+    
+    button {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Экраны до 400px (очень маленькие телефоны) */
+@media (max-width: 400px) {
+    .menu-header {
+        margin: 0 10px;
+    }
+    
+    .logo-header p {
+        font-size: 20px;
+    }
+    
+    .contact-info {
+        gap: 8px;
+    }
+    
+    .contact-info p {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+    
+    .info1 {
+        margin: 160px 10px 0 10px;
+    }
+    
+    .title-text-full {
+        font-size: 24px;
+    }
+    
+    .quote-full {
+        font-size: 11px;
+    }
+    
+    .photo-full img {
+        width: 160px;
+    }
+    
+    .manual-container {
+        padding: 25px 10px;
+    }
+    
+    .tour-container {
+        padding: 25px 10px;
+    }
+    
+    .footer {
+        margin: 25px 10px;
+    }
+}
+
+/* ========== УБРАТЬ ТОЛЬКО СТРЕЛКУ (arrow.png) ПРИ ШИРИНЕ 1440px И МЕНЬШЕ ========== */
+/* Фотографии экскурсий (excursion1-4.png) НЕ ТРОГАЕМ - ОНИ ОСТАЮТСЯ */
+@media (max-width: 1440px) {
+    img[src*="arrow.png"] {
+        display: none;
+    }
+}
+

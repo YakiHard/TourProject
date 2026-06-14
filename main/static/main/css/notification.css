@@ -60,4 +60,8 @@
     border: 3px solid rgb(255, 0, 0) !important;
 }
 
+.error-input:focus {
+    border: 3px solid #009175 !important;
+}
+
  

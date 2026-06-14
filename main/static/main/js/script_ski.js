@@ -7,6 +7,7 @@ const id_mountains = document.getElementById('id_mountains');
 const zermattBlock = document.getElementById('id_zermatt_mountains');
 const grindelwaldBlock = document.getElementById('id_grindelwald_mountains')
 const chamonixBlock = document.getElementById('id_chamonix_mountains');
+const caruisoBki = document.getElementById('id_caruiso_ski')
 
 function aboutScroll() {
     window.location.href = '/#biografy';
@@ -46,6 +47,7 @@ function showMountains() {
     if(zermattBlock)zermattBlock.style.display = 'none';
     if(grindelwaldBlock)grindelwaldBlock.style.display = 'none';
     if(chamonixBlock)chamonixBlock.style.display = 'none';
+    if(caruisoBki)caruisoBki.style.display = 'none;'
     if (directionSelect.value === 'Zermatt') {
         id_mountains.style.display = 'block';
         zermattBlock.style.display = 'block';
@@ -55,6 +57,9 @@ function showMountains() {
     } else if (directionSelect.value === 'Chamonix') {
         id_mountains.style.display = 'block';
         chamonixBlock.style.display = 'block';
+    } else if (directionSelect.value === 'Caruiso') {
+        id_mountains.style.display = 'block';
+        caruisoBki.style.display = 'block';
     }
 }
 

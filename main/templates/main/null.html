@@ -20,7 +20,8 @@
             </div>
             <div class="contact-info">
                 <p id="id_reviews">Отзывы</p>
-                <p class="about" id="id_aboutUs">О нас</p>
+                <p id="id_aboutUs">О нас</p>
+                <p id="contacts">Контакты</p>
                 {% if user.is_authenticated %}
                     <a href="{% url 'logout' %}">
                         <p class="login-register">Выйти</p>

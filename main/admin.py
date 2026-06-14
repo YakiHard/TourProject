@@ -8,12 +8,13 @@ class BaseTourAdmin(admin.ModelAdmin):
 
 @admin.register(ExcursionTour)
 class ExcersionAdmin(BaseTourAdmin):
-    list_display = ['direction', 'departure_date', 'status']
+    list_display = ['direction', 'departure_date', 'paris_excursion', 'rome_excursion', 'istanbul_excursion', 'saint_excursion', 'status']
     list_editable = ['status']
     
 @admin.register(BeachTour)
 class BeachAdmin(BaseTourAdmin):
-    list_display = ['direction', 'departure_date']
+    list_display = ['direction', 'departure_date', 'phuket_beach', 'hurghada_beach', 'bali_beach', 'male_beach', 'status']
+    list_editable = ['status']
 
 @admin.register(SkiTour)
 class SkiAdmin(BaseTourAdmin):

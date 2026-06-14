@@ -18,7 +18,7 @@ def login_view(request):
 
         if user is not None:
             auth_login(request, user)
-            messages.success(request, 'Добро пожаловать!')
+            messages.success(request, f'Добро пожаловать {user}!')
             return redirect('index')
         else:
             return render(request, 'main/login/login.html', {
@@ -254,6 +254,7 @@ def create_ski(request):
             zermatt_ski=request.POST.get('zermatt_ski', '')
             grindelwald_ski=request.POST.get('grindelwald_ski', '')
             chamonix_ski=request.POST.get('chamonix_ski', '')
+            caruiso_ski=request.POST.get('caruiso_ski', '')
             departure_date=request.POST.get('departure_date', '')
 
             # Бронирование
@@ -272,7 +273,8 @@ def create_ski(request):
                 errors['direction_error'] = True
             if(direction == 'Zermatt' and not zermatt_ski) or \
                 (direction == 'Grindelwald' and not grindelwald_ski) or \
-                (direction == 'Chamonix' and not chamonix_ski):
+                (direction == 'Chamonix' and not chamonix_ski) or \
+                (direction == 'Caruiso' and not caruiso_ski):
                     errors['direction_error'] = True
             if not departure_date:
                 errors['departure_date_error'] = True
@@ -296,6 +298,7 @@ def create_ski(request):
                 zermatt_ski=zermatt_ski,
                 grindelwald_ski=grindelwald_ski,
                 chamonix_ski=chamonix_ski,
+                caruiso_ski=caruiso_ski,
                 departure_date=departure_date,
                 name=name,
                 email=email,

@@ -912,13 +912,17 @@ body {
     font-family: 'Montserrat';
     width: 300px;
     position: relative;
+    overflow: hidden; 
 }
 
 .excursion-tour-cards img,
 .beach-tour-cards img,
 .ski-tour-cards img {
     filter: blur(2px);
-    pointer-events: none
+    pointer-events: none;
+    width: 100%;               
+    height: auto;            
+    object-fit: cover;       
 }
 
 .excursion-tour-cards .excursion-text,
@@ -1085,4 +1089,889 @@ body {
     height: 30px;
     cursor: pointer;
 }
+
+/* ========== АДАПТАЦИЯ ДЛЯ ВСЕХ УСТРОЙСТВ ========== */
+
+/* Ноутбуки 1440px */
+@media (max-width: 1440px) {
+    .menu-header {
+        padding: 0 80px;
+    }
+    
+    .face-container {
+        margin: 140px 80px 0 80px;
+        padding: 70px;
+    }
+    
+    .info1-tour,
+    .info2-tour {
+        margin: 100px 80px;
+    }
+    
+    .route-container {
+        margin: 0 80px;
+        padding: 80px 0;
+    }
+    
+    .reviews {
+        padding: 80px 80px;
+    }
+    
+    .tour {
+        margin: 100px 80px;
+    }
+    
+    .footer {
+        margin: 80px 80px;
+    }
+}
+
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+    /* ШАПКА - фиксированная, не перекрывает */
+    .header-section {
+        position: relative;
+    }
+    
+    .menu-header {
+        padding: 15px 30px;
+        flex-wrap: wrap;
+    }
+    
+    .contact-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+    
+    .contact-info p {
+        padding: 5px 12px;
+        font-size: 13px;
+    }
+    
+    .logo-header p {
+        font-size: 28px;
+    }
+    
+    /* ОТСТУП ДЛЯ КОНТЕНТА, ЧТОБЫ НЕ ПЕРЕКРЫВАЛО */
+    .face-container {
+        margin: 30px 30px 0 30px;
+        padding: 40px;
+    }
+    
+    .face-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .title p {
+        width: auto;
+        margin-right: 0;
+        max-width: 100%;
+        font-size: 18px;
+    }
+    
+    .title h1 {
+        font-size: 32px;
+    }
+    
+    .transfers-text {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .face-info img {
+        width: 250px;
+        margin-top: 30px;
+    }
+    
+    .info1-tour,
+    .info2-tour {
+        margin: 60px 30px;
+    }
+    
+    .info1-tour-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .info1-tour-container .text-right {
+        margin-right: 0;
+        justify-content: center;
+    }
+    
+    .info1-tour-container .gif {
+        margin-top: 30px;
+        justify-content: center;
+    }
+    
+    .info2-tour-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .info2-tour-container .text {
+        position: static;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    
+    .info2-tour-container .text h1 {
+        text-align: center;
+    }
+    
+    .info2-tour-container .text-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .info2-tour-container .text-block .block1,
+    .info2-tour-container .text-block .block2,
+    .info2-tour-container .text-block .block3,
+    .info2-tour-container .text-block .block4 {
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .info2-tour-container .text-block .block1 .img-block1,
+    .info2-tour-container .text-block .block2 .img-block2,
+    .info2-tour-container .text-block .block3 .img-block3,
+    .info2-tour-container .text-block .block4 .img-block4 {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .info2-tour-container .text-block .block1 h2,
+    .info2-tour-container .text-block .block2 h2,
+    .info2-tour-container .text-block .block3 h2,
+    .info2-tour-container .text-block .block4 h2 {
+        max-width: 100%;
+    }
+    
+    .info2-tour-container .text-block .block1 p,
+    .info2-tour-container .text-block .block2 p,
+    .info2-tour-container .text-block .block3 p,
+    .info2-tour-container .text-block .block4 p {
+        max-width: 100%;
+    }
+    
+    .route-container {
+        margin: 0 30px;
+        padding: 50px 0;
+    }
+    
+    .route-container .paris,
+    .route-container .thailand,
+    .route-container .zermatt {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .route-container .photo-container {
+        margin-right: 0;
+        margin-top: 30px;
+    }
+    
+    .route-container .photo-container .photo1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .route-container .photo-container .img3 {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    
+    .route-container .text-container h1 {
+        font-size: 32px;
+    }
+    
+    .route-container .text-container h2 {
+        font-size: 28px;
+    }
+    
+    .reviews {
+        padding: 50px 30px;
+        margin-top: 100px;
+    }
+    
+    .reviews h1 {
+        font-size: 32px;
+        width: auto;
+        text-align: center;
+    }
+    
+    .reviews-container .column1,
+    .reviews-container .column2,
+    .reviews-container .column3,
+    .reviews-container .column4 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .reviews1 {
+        width: calc(50% - 15px);
+        min-width: 250px;
+    }
+    
+    .tour {
+        margin: 60px 30px;
+    }
+    
+    .tour-cards {
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    .choices-tour h1 {
+        text-align: center;
+        font-size: 28px;
+    }
+    
+    .moscow-text {
+        justify-content: center;
+    }
+    
+    .biografy {
+        margin-top: 100px;
+    }
+    
+    .biografy-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 30px;
+        gap: 40px;
+    }
+    
+    .biografy-text p {
+        max-width: 100%;
+        font-size: 20px;
+    }
+    
+    .biografy-text .h1-text {
+        font-size: 28px;
+    }
+    
+    .my-photo img {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+        margin: 50px 30px;
+    }
+    
+    .footer-right p {
+        width: auto;
+    }
+    
+    .footer-left {
+        margin-bottom: 0;
+    }
+    
+    .pdf {
+        margin-top: 100px;
+    }
+    
+    .pdf .pdf-container {
+        padding: 40px 30px;
+        flex-direction: column;
+        text-align: center;
+        width: 85%;
+    }
+    
+    .pdf-container .text .pdf-animation {
+        margin-right: 0;
+        justify-content: center;
+    }
+    
+    .pdf-container .text h1 {
+        font-size: 32px;
+    }
+    
+    .arrange-container {
+        margin: 20px;
+        padding: 20px;
+        max-width: 90%;
+        max-height: 85%;
+        overflow-y: auto;
+    }
+    
+    .booking-form .contacts {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .btnSubmit {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Мобильные телефоны (320px - 768px) */
+@media (max-width: 768px) {
+    /* ШАПКА - фиксированная, но не перекрывает */
+    .header-section {
+        position: relative;
+    }
+    
+    .menu-header {
+        flex-direction: column;
+        padding: 12px 15px;
+        gap: 12px;
+    }
+    
+    .contact-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .contact-info p {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    
+    .logo-header p {
+        font-size: 22px;
+    }
+    
+    /* ОТСТУП ДЛЯ КОНТЕНТА */
+    .face-container {
+        margin: 20px 15px 0 15px;
+        padding: 25px 20px;
+    }
+    
+    .title h1 {
+        font-size: 24px;
+    }
+    
+    .title p {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    
+    .transfers-text {
+        gap: 12px;
+        margin-top: 30px;
+    }
+    
+    .transfers-text .city,
+    .transfers-text .country,
+    .transfers-text .tourist {
+        width: 85px;
+        padding: 8px;
+    }
+    
+    .transfers-text .city p,
+    .transfers-text .country p,
+    .transfers-text .tourist p {
+        font-size: 12px;
+    }
+    
+    .face-info img {
+        width: 180px;
+        margin-top: 20px;
+    }
+    
+    .info1-tour,
+    .info2-tour {
+        margin: 40px 15px;
+    }
+    
+    .info1-tour-container h1 {
+        font-size: 24px;
+        max-width: 100%;
+    }
+    
+    .info1-tour-container .text-right {
+        font-size: 24px;
+    }
+    
+    .info1-tour-container .text p {
+        font-size: 14px;
+    }
+    
+    .info1-tour-container .gif {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .info1-tour-container .gif .block1 {
+        align-items: center;
+    }
+    
+    .info1-tour-container .gif img {
+        max-width: 200px;
+    }
+    
+    .info2-tour-container h1 {
+        font-size: 24px;
+    }
+    
+    .info2-tour-container .text1,
+    .info2-tour-container .text2 {
+        font-size: 14px;
+    }
+    
+    .info2-tour-container .text-block .block1 h2,
+    .info2-tour-container .text-block .block2 h2,
+    .info2-tour-container .text-block .block3 h2,
+    .info2-tour-container .text-block .block4 h2 {
+        font-size: 18px;
+        max-width: 100%;
+    }
+    
+    .info2-tour-container .text-block .block1 p,
+    .info2-tour-container .text-block .block2 p,
+    .info2-tour-container .text-block .block3 p,
+    .info2-tour-container .text-block .block4 p {
+        font-size: 14px;
+    }
+    
+    .info2-tour-container .text-block .block1 .img-block1,
+    .info2-tour-container .text-block .block2 .img-block2,
+    .info2-tour-container .text-block .block3 .img-block3,
+    .info2-tour-container .text-block .block4 .img-block4 {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .info2-tour-container .text-block .block1 .img-block1 img,
+    .info2-tour-container .text-block .block2 .img-block2 img,
+    .info2-tour-container .text-block .block3 .img-block3 img,
+    .info2-tour-container .text-block .block4 .img-block4 img {
+        width: 100px;
+    }
+    
+    .route-container {
+        margin: 0 15px;
+        padding: 40px 0;
+    }
+    
+    .route-container .text-container h1 {
+        font-size: 24px;
+    }
+    
+    .route-container .text-container h2 {
+        font-size: 22px;
+    }
+    
+    .route-container .text-container p {
+        font-size: 13px;
+    }
+    
+    .route-container .photo-container img {
+        width: 120px;
+    }
+    
+    .btnDirections {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    
+    .reviews {
+        padding: 30px 15px;
+        margin-top: 80px;
+    }
+    
+    .reviews h1 {
+        font-size: 24px;
+    }
+    
+    .reviews1 {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .reviews1 .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .reviews1 p {
+        font-size: 13px;
+    }
+    
+    .btn-reviews #btnReviews {
+        padding: 8px 25px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+    
+    .tour {
+        margin: 40px 15px;
+    }
+    
+    .choices-tour h1 {
+        font-size: 22px;
+    }
+    
+    .moscow-text p {
+        font-size: 14px;
+    }
+    
+    .excursion-tour-cards,
+    .beach-tour-cards,
+    .ski-tour-cards {
+        width: 100%;
+        max-width: 260px;
+    }
+    
+    .excursion-tour-cards .excursion-text,
+    .beach-tour-cards .beach-text,
+    .ski-tour-cards .ski-text {
+        font-size: 14px;
+        left: 15px;
+    }
+    
+    .description_excursion .description,
+    .description_beach .description,
+    .description_ski .description {
+        padding: 3px 30px;
+    }
+    
+    .description_excursion h3,
+    .description_beach h3,
+    .description_ski h3 {
+        font-size: 14px;
+    }
+    
+    .biografy {
+        margin-top: 80px;
+    }
+    
+    .biografy-container {
+        padding: 30px 15px;
+        gap: 30px;
+    }
+    
+    .biografy-text .h1-text {
+        font-size: 22px;
+        margin: 30px 0;
+    }
+    
+    .biografy-text p {
+        font-size: 16px;
+    }
+    
+    .biografy-text .quote {
+        font-size: 14px;
+        margin-top: 30px;
+    }
+    
+    .my-photo img {
+        max-width: 220px;
+    }
+    
+    .footer {
+        margin: 30px 15px;
+        gap: 25px;
+    }
+    
+    .footer-right h1 {
+        font-size: 24px;
+    }
+    
+    .footer-right p {
+        font-size: 12px;
+        margin-top: 20px;
+    }
+    
+    .footer-center h3 {
+        font-size: 14px;
+    }
+    
+    .footer-center p {
+        font-size: 11px;
+    }
+    
+    .footer-left img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .footer-left .tg {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .pdf {
+        margin-top: 80px;
+    }
+    
+    .pdf .greenHouse {
+        height: 50vh;
+    }
+    
+    .pdf .pdf-container {
+        padding: 25px 15px;
+        width: 90%;
+    }
+    
+    .pdf-container .text h1 {
+        font-size: 22px;
+    }
+    
+    .pdf-container .text p {
+        font-size: 12px;
+    }
+    
+    .pdf-container .text .pdf-animation p {
+        font-size: 18px;
+    }
+    
+    .pdf-container .gif img {
+        width: 120px;
+    }
+    
+    #id_button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    
+    .top .top-container {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    
+    .arrange-container {
+        padding: 15px;
+    }
+    
+    .arrange-container .header-text .text h1 {
+        font-size: 18px;
+    }
+    
+    .arrange-container .header-text .text p {
+        font-size: 12px;
+    }
+    
+    .close {
+        font-size: 30px;
+    }
+    
+    .fio input,
+    .contacts input {
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    .personal_data label {
+        font-size: 12px;
+    }
+}
+
+/* ЦЕНТРИРОВАНИЕ ДЛЯ 425px И МЕНЬШЕ */
+@media (max-width: 455px) {
+    /* ОСНОВНОЙ КОНТЕЙНЕР */
+    .info2-tour-container {
+        align-items: center !important;
+        text-align: center !important;
+    }
+    
+    .info2-tour-container .text {
+        align-items: center !important;
+        text-align: center !important;
+    }
+    
+    .info2-tour-container .text h1 {
+        text-align: center !important;
+        font-size: 24px !important;
+    }
+    
+    .info2-tour-container .text .text1,
+    .info2-tour-container .text .text2 {
+        text-align: center !important;
+    }
+    
+    /* БЛОКИ С КАРТОЧКАМИ */
+    .info2-tour-container .text-block {
+        align-items: center !important;
+    }
+    
+    .info2-tour-container .text-block .block1,
+    .info2-tour-container .text-block .block2,
+    .info2-tour-container .text-block .block3,
+    .info2-tour-container .text-block .block4 {
+        text-align: center !important;
+        margin: 0 auto 20px auto !important;
+        width: 95% !important;
+        max-width: 400px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .info2-tour-container .text-block .block1 h2,
+    .info2-tour-container .text-block .block2 h2,
+    .info2-tour-container .text-block .block3 h2,
+    .info2-tour-container .text-block .block4 h2 {
+        text-align: center !important;
+        max-width: 100% !important;
+    }
+    
+    .info2-tour-container .text-block .block1 p,
+    .info2-tour-container .text-block .block2 p,
+    .info2-tour-container .text-block .block3 p,
+    .info2-tour-container .text-block .block4 p {
+        text-align: center !important;
+        max-width: 100% !important;
+    }
+    
+    /* КАРТИНКИ В БЛОКАХ */
+    .info2-tour-container .text-block .block1 .img-block1,
+    .info2-tour-container .text-block .block2 .img-block2,
+    .info2-tour-container .text-block .block3 .img-block3,
+    .info2-tour-container .text-block .block4 .img-block4 {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+    
+    .info2-tour-container .text-block .block1 .img-block1 img,
+    .info2-tour-container .text-block .block2 .img-block2 img,
+    .info2-tour-container .text-block .block3 .img-block3 img,
+    .info2-tour-container .text-block .block4 .img-block4 img {
+        width: 80px !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* Очень маленькие телефоны (320px - 375px) */
+@media (max-width: 375px) {
+    .face-container {
+        padding: 20px 15px;
+    }
+    
+    .title h1 {
+        font-size: 22px;
+    }
+    
+    .title p {
+        font-size: 13px;
+    }
+    
+    .transfers-text .city,
+    .transfers-text .country,
+    .transfers-text .tourist {
+        width: 75px;
+    }
+    
+    .info1-tour-container h1 {
+        font-size: 22px;
+    }
+    
+    .info2-tour-container h1 {
+        font-size: 22px;
+    }
+    
+    .route-container .text-container h1 {
+        font-size: 22px;
+    }
+    
+    .route-container .text-container h2 {
+        font-size: 20px;
+    }
+    
+    .reviews h1 {
+        font-size: 22px;
+    }
+    
+    .choices-tour h1 {
+        font-size: 20px;
+    }
+    
+    .excursion-tour-cards,
+    .beach-tour-cards,
+    .ski-tour-cards {
+        max-width: 100%;
+    }
+    
+    .biografy-text .h1-text {
+        font-size: 20px;
+    }
+    
+    .biografy-text p {
+        font-size: 15px;
+    }
+    
+    .pdf-container .text h1 {
+        font-size: 20px;
+    }
+    
+    .btnSubmit {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+/* iPhone SE (320px) */
+@media (max-width: 320px) {
+    .contact-info p {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+    
+    .logo-header p {
+        font-size: 20px;
+    }
+    
+    .title h1 {
+        font-size: 20px;
+    }
+    
+    .title p {
+        font-size: 12px;
+    }
+    
+    .transfers-text .city,
+    .transfers-text .country,
+    .transfers-text .tourist {
+        width: 70px;
+    }
+    
+    .info1-tour-container h1 {
+        font-size: 20px;
+    }
+    
+    .info2-tour-container h1 {
+        font-size: 20px;
+    }
+    
+    .route-container .text-container h1 {
+        font-size: 20px;
+    }
+    
+    .reviews h1 {
+        font-size: 20px;
+    }
+    
+    .biografy-text .h1-text {
+        font-size: 18px;
+    }
+    
+    .biografy-text p {
+        font-size: 14px;
+    }
+}
+
 

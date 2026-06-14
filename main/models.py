@@ -63,7 +63,7 @@ class ExcursionTour(Tour):
     ROME_EXCURSION = [
         ('coliseum','Колизей'),
         ('pantheon','Пантеон'),
-        ('st_peter','Собр Святого Петра')
+        ('st_peter','Собр Св. Петра')
     ]
 
     ISTANBUL_EXCURSION = [
@@ -73,7 +73,7 @@ class ExcursionTour(Tour):
 
     SAINT_PETERBURG = [
         ('hermitage','Эрмитаж'),
-        ('peter_paul','Петропавловская крепость')
+        ('peter_paul','Петропавл. крепость')
     ]
 
     paris_excursion = models.CharField(choices=PARIS_EXCURSION, verbose_name="Экскурсия в Париж, Франция", blank=True)
@@ -124,8 +124,8 @@ class SkiTour(Tour):
     ]
 
     CARUISO_SKI = [
-        ('Val-Gardena','Валь-Гардена'),
-        ('Gran San Bernardo','Гран-Сан-Бернардо')
+        ('ValGardena','Валь-Гардена'),
+        ('GranSanBernardo','Гран-Сан-Бернардо')
     ]
 
     zermatt_ski = models.CharField(choices=ZERMATT_SKI, max_length=20, verbose_name="Гора в Церматт, Швейцария", blank=True)

@@ -26,7 +26,8 @@
             </div>
             <div class="contact-info">
                 <p id="id_reviews">Отзывы</p>
-                <p class="about" id="id_aboutUs">О нас</p>
+                <p id="id_aboutUs">О нас</p>
+                <p id="contacts">Контакты</p>
                 {% if user.is_authenticated %}
                     <a href="{% url 'logout' %}">
                         <p class="login-register">Выйти</p>
@@ -40,73 +41,185 @@
         </nav>
     </section>
     <section class="main">
-        <div class="tour-list">
+        <div class="tourList">
             {% for tour in tours %}
-            <div class="tourId">
-                <div class="direction">
-                    <h3>{{tour.get_direction_display}}</h3>
-                    <div class="direction-status-{{tour.status}}">
-                        <p>{{tour.get_status_display}}</p>
-                    </div>
-    
-                </div>
-                <div class="place">
-                    <!-- ЭКСКУРСИОННЫЙ -->
-                    {% if tour.paris_excursion or tour.rome_excursion or tour.istanbul_excursion or tour.saint_excursion %}
-                    <div class="img">
-                        {% if tour.paris_excursion == "eifell_tower" %}
-                            <img src="{% static 'main/images/EiffelTower.png' %}">
-                        {% elif tour.paris_excursion == "louvre" %}
-                            <img src="{% static 'main/images/Louvre.png' %}">
-                        {% endif %}
-                    </div>
-                    <div class="text">
-                        {% if tour.paris_excursion == "eifell_tower" %}
-                        {{tour.get_paris_excursion_display}}
-                        {% elif tour.paris_excursion == "louvre" %}
-                        {{tour.get_paris_excursion_display}}
-                        {% endif %}
-                    </div>
-                    {% endif %}
-                </div>
-                <div class="data">
-                    <p>Дата: {{tour.departure_date}}</p>
-                    <div class="user">
-                        <img src="{% static 'main/images/userIcon.png' %}">
-                        <p>{{tour.name}}</p>
-                    </div>
-                    <div class="phone">
-                        <img src="{% static 'main/images/phoneIcon.png' %}">
-                        <p>{{tour.number}}</p>
+                <div class="tour">
+                    <div class="header">
+                        <div class="img">
+                            <!-- ЭКСКУРСИОННЫЙ ТУР -->
+                            <!-- ПАРИЖ, ФРАНЦИЯ -->
+                            {% if tour.paris_excursion == "eifell_tower" %}
+                                <img src="{% static 'main/images/EiffelTower.png' %}">
+                            {% elif tour.paris_excursion == "louvre" %}
+                                <img src="{% static 'main/images/Louvre.png' %}">
+                            {% elif tour.paris_excursion == "notre_dame" %}
+                                <img src="{% static 'main/images/NotreDame.png' %}">
+                            <!-- РИМ, ИТАЛИЯ -->
+                            {% elif tour.rome_excursion == "coliseum" %}
+                                <img src="{% static 'main/images/Coliseum.png' %}">
+                            {% elif tour.rome_excursion == "pantheon" %}
+                                <img src="{% static 'main/images/Pantheon.png' %}">
+                            {% elif tour.rome_excursion == "st_peter" %}
+                                <img src="{% static 'main/images/StPeter.png' %}">
+                            <!-- СТАМБУЛ, ТУРЦИЯ -->
+                            {% elif tour.istanbul_excursion == "hagua_sophia" %}
+                                <img src="{% static 'main/images/HaguaSophia.png' %}">
+                            {% elif tour.istanbul_excursion == "blue_mosque" %}
+                                <img src="{% static 'main/images/BlueMosque.png' %}">
+                            <!-- САНКТ-ПЕТЕРБУРГ, РОССИЯ -->
+                            {% elif tour.saint_excursion == "hermitage" %}
+                                <img src="{% static 'main/images/Hermitage.png' %}">
+                            {% elif tour.saint_excursion == "peter_paul" %}
+                                <img src="{% static 'main/images/PeterPaul.png' %}">
+                            <!-- ПЛЯЖНЫЙ ТУР -->
+                            <!-- ПХУКЕТ, ТАИЛАНД -->
+                            {% elif tour.phuket_beach == "patong" %}
+                                <img src="{% static 'main/images/Patong.png' %}">
+                            {% elif tour.phuket_beach == "kata" %}
+                                <img src="{% static 'main/images/Kata.png' %}">
+                            <!-- ХУРГАДА, ЕГИПЕТ -->
+                            {% elif tour.hurghada_beach == "sahl_hasheesh" %}
+                                <img src="{% static 'main/images/SahlHasheesh.png' %}">
+                            {% elif tour.hurghada_beach == "el_gouna" %}
+                                <img src="{% static 'main/images/ElGouna.png' %}">
+                            <!-- БАЛИ, ИНДОНЕЗИЯ -->
+                            {% elif tour.bali_beach == "kuta" %}
+                                <img src="{% static 'main/images/Kuta.png' %}">
+                            {% elif tour.bali_beach == "nusa_dua" %}
+                                <img src="{% static 'main/images/NusaDua.png' %}">
+                            <!-- МАЛЕ, МАЛЬДИВЫ -->
+                            {% elif tour.male_beach == "ari_atoll" %}
+                                <img src="{% static 'main/images/AriAtoll.png' %}">
+                            {% elif tour.male_beach == "baa_atoll" %}
+                                <img src="{% static 'main/images/BaaAtoll.png' %}">
+                            <!-- ЦЕРМАТТ, ШВЕЙЦАРИЯ -->
+                            {% elif tour.zermatt_ski == "matterhorn" %}
+                                <img src="{% static 'main/images/Matterhorn.png' %}">
+                            {% elif tour.grindelwald_ski == "iger" %}
+                                <img src="{% static 'main/images/Iger.png' %}">
+                            {% elif tour.caruiso_ski == "ValGardena" %}
+                                <img src="{% static 'main/images/ValGardena.png' %}">
+                            {% elif tour.caruiso_ski == "GranSanBernardo" %}
+                                <img src="{% static 'main/images/GranSanBernardo.png' %}">
+                            {% endif %}
+                            <div class="text">
+                                <!-- ЭКСКУРСИОННЫЙ ТУР -->
+                                <!-- ПАРИЖ, ФРАНЦИЯ -->
+                                {% if tour.paris_excursion == "eifell_tower" %}
+                                    {{tour.get_paris_excursion_display}}
+                                {% elif tour.paris_excursion == "louvre" %}
+                                    {{tour.get_paris_excursion_display}}
+                                {% elif tour.paris_excursion == "notre_dame" %}
+                                    {{tour.get_paris_excursion_display}}
+                                <!-- РИМ, ИТАЛИЯ -->
+                                {% elif tour.rome_excursion == "coliseum" %}
+                                    {{tour.get_rome_excursion_display}}
+                                {% elif tour.rome_excursion == "pantheon" %}
+                                    {{tour.get_rome_excursion_display}}
+                                {% elif tour.rome_excursion == "st_peter" %}
+                                    {{tour.get_rome_excursion_display}}
+                                <!-- СТАМБУЛ, ТУРЦИЯ -->
+                                {% elif tour.istanbul_excursion == "hagua_sophia" %}
+                                    {{tour.get_istanbul_excursion_display}}
+                                {% elif tour.istanbul_excursion == "blue_mosque" %}
+                                    {{tour.get_istanbul_excursion_display}}
+                                <!-- САНКТ-ПЕТЕРБУРГ, РОССИЯ -->
+                                {% elif tour.saint_excursion == "hermitage" %}
+                                    {{tour.get_saint_excursion_display}}
+                                {% elif tour.saint_excursion == "peter_paul" %}
+                                    {{tour.get_saint_excursion_display}}
+                                <!-- ПЛЯЖНЫЙ ТУР -->
+                                <!-- ПХУКЕТ, ТАИЛАНД -->
+                                {% elif tour.phuket_beach == "patong" %}
+                                    {{tour.get_phuket_beach_display}}
+                                {% elif tour.phuket_beach == "kata" %}
+                                    {{tour.get_phuket_beach_display}}
+                                <!-- ХУРГАДА, ЕГИПЕТ -->
+                                {% elif tour.hurghada_beach == "sahl_hasheesh" %}
+                                    {{tour.get_hurghada_beach_display}}
+                                {% elif tour.hurghada_beach == "el_gouna" %}
+                                    {{tour.get_hurghada_beach_display}}
+                                <!-- БАЛИ, ИНДОНЕЗИЯ -->
+                                {% elif tour.bali_beach == "kuta" %}
+                                    {{tour.get_bali_beach_display}}
+                                {% elif tour.bali_beach == "nusa_dua" %}
+                                    {{tour.get_bali_beach_display}}
+                                <!-- МАЛЕ, МАЛЬДИВЫ -->
+                                {% elif tour.male_beach == "ari_atoll" %}
+                                    {{tour.get_male_beach_display}}
+                                {% elif tour.male_beach == "baa_atoll" %}
+                                    {{tour.get_male_beach_display}}
+                                <!-- ЦЕРМАТТ, ШВЕЙЦАРИЯ -->
+                                {% elif tour.zermatt_ski == "matterhorn" %}
+                                    {{tour.get_zermatt_ski_display}}
+                                {% elif tour.grindelwald_ski == "iger" %}
+                                    {{tour.get_grindelwald_ski_display}}
+                                {% elif tour.caruiso_ski == "ValGardena" %}
+                                    {{tour.get_caruiso_ski_display}}
+                                {% elif tour.caruiso_ski == "GranSanBernardo" %}
+                                    {{tour.get_caruiso_ski_display}}
+                                {% endif %}
+                                <p class="direction">{{tour.get_direction_display}}</p>
+                                <div class="text-status-{{tour.status}}">
+                                    <p>{{tour.get_status_display}}</p>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="date">
+                                    <img src="{% static 'main/images/dateIcon.png' %}">
+                                    <p>{{tour.departure_date}}</p>
+                                </div>
+                                <div class="name">
+                                    <img src="{% static 'main/images/userIcon.png' %}">
+                                    <p>{{tour.name}}</p>
+                                </div>
+                                <div class="number">
+                                    <img src="{% static 'main/images/phoneIcon.png' %}">
+                                    <p>{{tour.number}}</p>
+                                </div>
+                                <div class="email">
+                                    <img src="{% static 'main/images/emailIcon.png' %}">
+                                    <p>{{tour.email}}</p>
+                                </div>
+                            </div>
+                            <div class="button">
+                                {% if tour.status == "cancel" %}
+                                <a href="{% url 'restart_tour' tour.id %}">
+                                    <button>Возобновить</button>
+                                </a>
+                                <a href="{% url 'delete_tour' tour.id %}">
+                                    <button>Удалить</button>
+                                </a>
+                                <a href="#">
+                                    <button class="disabled-btn">Отменить</button>
+                                </a>
+                                {% elif tour.status == "completed" %}
+                                <a href="#">
+                                    <button class="disabled-btn">Возобновить</button>
+                                </a>
+                                <a href="{% url 'delete_tour' tour.id %}">
+                                    <button>Удалить</button>
+                                </a>
+                                 <a href="#">
+                                    <button class="disabled-btn">Отменить</button>
+                                </a>
+                                {% else %}
+                                <a href="#">
+                                    <button class="disabled-btn">Возобновить</button>
+                                </a>
+                                <a href="#">
+                                    <button class="disabled-btn">Удалить</button>
+                                </a>
+                                <a href="{% url 'cancel_tour' tour.id %}">
+                                    <button>Отменить</button>
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>       
                     </div>
                     
-                    
-                    <p>Email: {{tour.email}}</p>
                 </div>
-                <div class="button">
-                    {% if tour.status == "cancel" %}
-                    <a href="{% url 'restart_tour' tour.id %}">
-                        <button type="button">Возобновить</button>
-                    </a>
-                    <a href="{% url 'delete_tour' tour.id %}">
-                        <button>Удалить</button>
-                    </a>
-                    {% elif tour.status == "completed" %}
-                    <a href="{% url 'delete_tour' tour.id %}">
-                        <button>Удалить</button>
-                    </a>
-                    {% else %}
-                    <a href="{% url 'cancel_tour' tour.id %}">
-                        <button>Отменить</button>
-                    </a>
-                    {% endif %}
-                </div>
-                
-                
-            </div>
-            {% empty %}
             {% endfor %}
-        </div>
         </div>
     </section>
     

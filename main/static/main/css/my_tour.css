@@ -22,7 +22,7 @@ body {
 }
 
 .menu-header p {
-    color: black;
+    color: #000000;
 }
 
 .menu-header a {
@@ -35,159 +35,157 @@ body {
     font-family: 'Bebas Neue', cursive;
 }
 
-.contact-info {
+.contact-info{
     display: flex;
     align-items: center;
-    gap: 30px;
-    font-family: 'Liter';
+    gap: 20px;
+    font-family: 'Liter', sans-serif;
     font-weight: 400px;
+    font-style: normal;
     font-size: 15px;
     font-weight: bold;
 }
 
 .contact-info p {
-    border: 2px solid black;
-    padding: 5px 10px;
+    padding: 5px 15px;
     border-radius: 20px;
+    border: 2px solid #009175;
     transition: all 0.4s ease;
+    color: #000000;
+
+    &:hover {
+        background-color: #009175;
+        border: 2px solid #009175;
+        cursor: pointer;
+        color: #F0F0F0;
+    }
 }
 
-.contact-info p:hover{
-    background: #e9fd9a;
-    cursor: pointer;
+.contact-info .login-register {
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 2px solid #009175;
+    background-color: #009175;
+    transition: all 0.4s ease;
+    color: #F0F0F0;
+
+    &:hover {
+        background-color: #2C3E50;
+        border: 2px solid #2C3E50;
+        cursor: pointer;
+        color: #F0F0F0;
+    }
 }
 
 .main {
     padding: 150px;
-    display: flex;
-    justify-content: center;
     font-family: 'Montserrat';
 }
 
-.main .tour-list {
+.tourList {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
-    justify-content: space-between;
-    width: 100%;
 }
 
-.tourId {
-    background-color: #ffffff;
-    border-radius: 30px;
-    padding: 20px;
-    position: relative;
-    padding-top: 110px;
-    box-shadow: 4px 4px 17px -3px rgba(34, 60, 80, 0.2);
-    max-width: 800px;
-}
-
-.tourId .direction {
+.tour {
+    flex: 0 0 800px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0 25px;
-    background-color: #009175;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px; 
+    justify-content: center;   
 }
 
-.tourId .direction h3 {
+.tour .header .img{
+    position: relative;
+
+}
+
+.tour .header .img img {
+    pointer-events: none;
+}
+
+.tour .header .img .text {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 40px;
+    color: white;
     font-family: 'Unbounded', Arial, sans-serif;
-    font-size: 25px;
+    max-width: 300px;
+}
+
+.tour .header .img .text .direction {
+    margin: 0;
+    font-size: 20px;
 }
 
 /* СТАТУС */
-.direction-status-pending {
+.text-status-pending,
+.text-status-processing,
+.text-status-completed,
+.text-status-cancel {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 130px;
+    width: 260px;
+    border-radius: 30px;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.text-status-pending {
     background-color: #e67e22;
-    border-radius: 30px;
-    padding: 0 10px;
-    font-weight: 700;
 }
 
-.direction-status-processing {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 130px;
+.text-status-processing {
     background-color: #3498db;
-    border-radius: 30px;
-    padding: 0 10px;
-    font-weight: 700;
 }
 
-.direction-status-completed {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 130px;
+.text-status-completed {
     background-color: #2ecc71;
-    border-radius: 30px;
-    padding: 0 10px;
-    font-weight: 700;
 }
 
-.direction-status-cancel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 130px;
+.text-status-cancel {
     background-color: red;
-    border-radius: 30px;
-    padding: 0 10px;
-    font-weight: 700;
+
 }
 
-.tourId .place {
+.tour .header .img .data {
+    position: absolute;
     display: flex;
-    gap: 50px;
+    flex-direction: column;
+    gap: 5px;
+    top: 50px;
+    left: 360px;
+    color: white;
+    font-size: 15px;
+}
+
+.tour .header .img .data .name,
+.tour .header .img .data .date,
+.tour .header .img .data .number,
+.tour .header .img .data .email {
+    display: flex;
     align-items: center;
-    background-color: #F5F5F5;
-    border-radius: 20px;
-    font-family: 'Great Vibes', cursive;
-    font-size: 50px;
-}
-
-.tourId .place img {
-    width: 100px;
-    border-radius: 20px;
-}
-
-.tourId .data {
-    display: flex;
-    gap: 40px;
-    margin-top: 10px;
-}
-
-.tourId .data .user,
-.tourId .data .phone {
-    display: flex;
     gap: 10px;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.256);
     border-radius: 10px;
-    padding: 5px 10px;
-    background-color: #F0F0F0;
+    padding: 0 15px;
 }
 
-.tourId .button {
+.tour .header .img .button {
+    position: absolute;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 10px;
+    top: 50px;
+    right: 50px;
 }
 
-.tourId .button button {
-    margin-top: 30px;
-    padding: 15px 40px;
-    font-size: 20px;
+.img .button button {
+    padding: 15px 20px;
+    font-size: 15px;
     border-radius: 20px;
     background-color: #2C3E50;
     border: 1px solid #2C3E50;
@@ -203,3 +201,328 @@ body {
         color: #F0F0F0;
     }
 }
+
+.disabled-btn {
+    background-color: #d3d3d3 !important;
+    border: 2px solid #d3d3d3 !important;
+    color: #a0a0a0 !important;
+}
+
+/* ========== АДАПТАЦИЯ ДЛЯ ВСЕХ УСТРОЙСТВ ========== */
+
+/* Ноутбуки 1440px */
+@media (max-width: 1440px) {
+    .main {
+        padding: 120px 80px;
+    }
+    
+    .tour {
+        flex: 0 0 700px;
+    }
+    
+    .tour .header .img .text {
+        font-size: 32px;
+        top: 30px;
+        left: 30px;
+        max-width: 250px;
+    }
+    
+    .tour .header .img .data {
+        top: 30px;
+        left: 300px;
+    }
+    
+    .tour .header .img .button {
+        top: 30px;
+        right: 30px;
+    }
+    
+    .img .button button {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+}
+
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+    .header-section {
+        position: relative;
+    }
+    
+    .menu-header {
+        padding: 15px 30px;
+        flex-wrap: wrap;
+    }
+    
+    .contact-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+    
+    .contact-info p {
+        padding: 5px 12px;
+        font-size: 13px;
+    }
+    
+    .logo-header p {
+        font-size: 28px;
+    }
+    
+    .main {
+        padding: 30px 30px;
+    }
+    
+    .tour {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .tour .header .img {
+        width: 100%;
+    }
+    
+    .tour .header .img img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    /* АДАПТАЦИЯ БЛОКОВ - ОНИ СТАНОВЯТСЯ ВНИЗ КАРТИНКИ */
+    .tour .header .img .text,
+    .tour .header .img .data,
+    .tour .header .img .button {
+        position: static;
+        margin: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .tour .header .img .text {
+        background-color: rgba(0, 0, 0, 0.7);
+        margin-top: 20px;
+        font-size: 28px;
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 15px;
+    }
+    
+    .tour .header .img .text .direction {
+        font-size: 18px;
+    }
+    
+    .tour .header .img .data {
+        background-color: rgba(0, 0, 0, 0.5);
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 15px;
+        border-radius: 15px;
+        left: auto;
+        top: auto;
+    }
+    
+    .tour .header .img .data .name,
+    .tour .header .img .data .date,
+    .tour .header .img .data .number,
+    .tour .header .img .data .email {
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 5px 12px;
+        font-size: 12px;
+    }
+    
+    .tour .header .img .data img {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .tour .header .img .button {
+        background-color: transparent;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        right: auto;
+        top: auto;
+    }
+    
+    .img .button button {
+        padding: 8px 15px;
+        font-size: 12px;
+        width: auto;
+    }
+    
+    .text-status-pending,
+    .text-status-processing,
+    .text-status-completed,
+    .text-status-cancel {
+        width: 200px;
+        font-size: 12px;
+    }
+}
+
+/* Мобильные телефоны (320px - 768px) */
+@media (max-width: 768px) {
+    .header-section {
+        position: relative;
+    }
+    
+    .menu-header {
+        flex-direction: column;
+        padding: 12px 15px;
+        gap: 12px;
+    }
+    
+    .contact-info {
+        gap: 8px;
+    }
+    
+    .contact-info p {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    
+    .logo-header p {
+        font-size: 22px;
+    }
+    
+    .main {
+        padding: 20px 15px;
+    }
+    
+    .tourList {
+        gap: 20px;
+    }
+    
+    /* АДАПТАЦИЯ БЛОКОВ - ВСЕ ВНИЗ С ФОНОМ */
+    .tour .header .img .text,
+    .tour .header .img .data,
+    .tour .header .img .button {
+        margin: 8px 0;
+        border-radius: 15px;
+    }
+    
+    .tour .header .img .text {
+        background-color: rgba(0, 0, 0, 0.8);
+        font-size: 22px;
+        margin-top: 15px;
+        margin-left: 0;
+        padding: 12px;
+    }
+    
+    .tour .header .img .text .direction {
+        font-size: 16px;
+    }
+    
+    .tour .header .img .data {
+        background-color: rgba(0, 0, 0, 0.6);
+        margin-top: 15px;
+        margin-left: 0;
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .tour .header .img .data .name,
+    .tour .header .img .data .date,
+    .tour .header .img .data .number,
+    .tour .header .img .data .email {
+        padding: 4px 10px;
+        font-size: 11px;
+        gap: 6px;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .tour .header .img .data img {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .tour .header .img .button {
+        background-color: transparent;
+        margin-top: 15px;
+        margin-left: 0;
+        gap: 8px;
+    }
+    
+    .img .button button {
+        padding: 6px 12px;
+        font-size: 11px;
+        background-color: #2C3E50;
+    }
+    
+    .text-status-pending,
+    .text-status-processing,
+    .text-status-completed,
+    .text-status-cancel {
+        width: 170px;
+        font-size: 11px;
+        margin-top: 10px;
+    }
+}
+
+/* Очень маленькие телефоны (320px - 375px) */
+@media (max-width: 375px) {
+    .tour .header .img .text {
+        font-size: 18px;
+        padding: 10px;
+    }
+    
+    .text-status-pending,
+    .text-status-processing,
+    .text-status-completed,
+    .text-status-cancel {
+        width: 150px;
+        font-size: 10px;
+    }
+    
+    .tour .header .img .data .name,
+    .tour .header .img .data .date,
+    .tour .header .img .data .number,
+    .tour .header .img .data .email {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+    
+    .img .button button {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+}
+
+/* iPhone SE (320px) */
+@media (max-width: 320px) {
+    .contact-info p {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+    
+    .logo-header p {
+        font-size: 20px;
+    }
+    
+    .tour .header .img .text {
+        font-size: 16px;
+        padding: 8px;
+    }
+    
+    .text-status-pending,
+    .text-status-processing,
+    .text-status-completed,
+    .text-status-cancel {
+        width: 130px;
+        font-size: 9px;
+    }
+    
+    .tour .header .img .data .name,
+    .tour .header .img .data .date,
+    .tour .header .img .data .number,
+    .tour .header .img .data .email {
+        font-size: 9px;
+        padding: 2px 6px;
+    }
+    
+    .img .button button {
+        padding: 4px 8px;
+        font-size: 9px;
+    }
+}
+
